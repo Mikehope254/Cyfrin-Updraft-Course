@@ -1,0 +1,213 @@
+# Blockchain Basics 
+Learn Solidity Smart Contract Development | Full 2024 Cyfrin Updraft Course
+https://www.youtube.com/watch?v=-1GB6m39-rM&t=6635s  (0:00:00 - 2:54:49)
+
+# Terminologies
+
+- Blockchain / Smart Contract Platform: A digital ledger that records transactions across many computers in a secure and decentralized manner. A blockchain maintains data integrity and security by linking each block to the previous one in a tamper-resistant chain.
+Bitcoin - 1st cryptocurrency (digital gold) 
+Ethereum - used blockchain infrastructure and added Decentralized Agreements (Smart Contract) and other ways to interact with each other without a centralized governing force.
+
+- Smart Contracts: Agreement, contract, or a set of instructions deployed in a decentralized blockchain. It is a self-executing contract with the terms of the agreement directly written into code. They run on blockchains and automatically execute when predetermined conditions are met, without the need for intermediaries. Value of Smart Contract is that they create Trust Minimized Agreements / Unbreakable Promises
+
+- Hybrid smart contracts - Hybrid smart contracts combine on-chain code (running on a blockchain) with off-chain data and computations provided by oracles. This allows the contracts to interact with data and systems outside their native blockchain. (On-Chain decentralized login + Off-Chain decentralized Agreements and computations (Oracle)).
+
+- Oracle: any device or entity that connects a deterministic blockchain with off-chain data or runs external computation. 
+
+- Oracle Problem - The challenge of smart contracts accessing real-world data.
+
+- Chainlink: modular decentralized Oracle network that can both bring external(off-chain) data and external computations to the smart contracts and make sure they are decentralized.
+
+- Layer2 (L2): Layer 2 solutions in web3 are technologies built on top of a blockchain (Layer 1) to improve its scalability and efficiency. These solutions handle transactions off the main chain, reducing congestion and fees, and then settle the final state on the main chain. Example: The Lightning Network for Bitcoin. Types of True Layer 2s: *Optimistic Rollup & *Zero Knowledge Rollups 
+
+- Dapp (Decentralized Application): A Dapp is an application that runs on a decentralized network, typically a blockchain. It is powered by smart contracts and operates without a central authority. Dapps can serve various purposes, from finance to gaming. Example: Uniswap, a decentralized finance application.
+
+- Ethereum/EVM (Ethereum Virtual Machine): Ethereum is a blockchain platform known for its smart contract functionality. The Ethereum Virtual Machine (EVM) is its computation engine that executes smart contracts. Ethereum allows developers to build decentralized applications and is the basis for many web3 projects.
+
+# The Purpose Of Smart Contracts & Blockchain
+- Almost every interaction or transaction in our lives involves some form of agreement or contract.
+- Once deployed a smart contract is: 
+>>Immutable (Cannot be altered)
+>>Automatically executes
+>>Everyone sees the terms of agreement.
+
+## Ideal Blockchain Properties (Blockchain Trilemma)
+>>Secure 
+>>Decentralized 
+>>Scalability
+
+## The Problem with Traditional Agreements
+- Consumer Trust
+- Banking and Trust
+- Financial Markets Access
+
+- Blockchain Trilemma: It states that a Blockchain can only have 2 out of the 3 properties
+
+## Benefits of Blockchain and Smart Contracts/ Features of Smart Contracts
+1. Security and immutability(unchangeable)
+2. Decentralization (Many node operators run Blockchain)
+3. Transparency and Flexibility
+4. Speed and efficiency 
+5. Counterparty Risk Removal (Removes the centralized entities due to immutability)
+6. Trust Minimized Agreements/ Unbreakable Promises
+
+## Applications of Smart Contracts
+1. Decentralized Finance (DeFi)
+2. Decentralized Autonomous Organizations (DAOs)
+3. Non-Fungible Tokens (NFTs)
+
+- Testnet- Blockchain test network
+- Testnet Faucet- a place to get free testnet ETH
+
+# Introduction To Gas
+
+## Terminologies
+- Gas Price: the amount it cost to interact with a blockchain / How much it costs to perform executions on-chain. The role of Gas price is to set the cost per unit of gas specified for the transaction.
+- Transaction Fee: The amount rewarded to the block producer for processing the transaction. = Gas Price * Gas Used = (Block Base fee per Gas + Max Priority fee per Gas) * Gas Used. The more people send transactions at the same time the more expensive your gas costs are.
+- Block: A list of transactions mined together
+- Hash: unique fixed length string, meant to identify a piece of data. They are created by putting a piece of data into a hash function
+- Hash Algorithm: a function that computes data into a unique hash. eg Ethereum uses Keccak256 hashing algorithm
+- Block's hash: is used to link the block to the previous one and ensure data integrity.
+- Nonce: "Number Used Once" to find the "solution" to the blockchain problem. It's also used to define the transaction number for an account/address
+- Mining: The process of finding the "solution" to the blockchain "problem" e.g in example used the "problem" was to find a hash that starts with 4 zeros. Nodes get paid for mining blocks
+- Private Key: Used to "sign" transactions and its only known to the key holder,
+- Public key is derived form your private key. Anyone can see it and use it to verify that a transaction came from you.
+- Signing  a transaction: A "One way" process. Someone with a private key signs a transaction by their private key being hashed with their transaction data. Anyone can verify this new transaction hash with your public key
+- Secret Phrase is used to generate wallets, each wallet with their own private key. Access to the secret phrase means access to all generated wallets.
+>> Secret Phrase > Private key ||| > Public Key > Address
+
+
+EIP 1559 https://www.youtube.com/watch?v=MGemhK9t44Q
+EIP = Ethereum Improvement Proposal (inspired By BitcoinIP)
+The more people use a chain the more expensive it is to send transactions
+Base Fee (Gwei)- The minimum gas price to send your transactions = The minimum fee to be paid by a transaction in order to be included in a transaction
+Max Fee (Gwei) - the Maximum price to send your transactiions
+
+Node -  a single instance in a decentralizeed network
+Blockchain nodes keep lists of the transaction that occur = Decentralized database
+
+Consensus - the mechanism used to agree on the state or value of a blockchain
+	1.Chain selection
+	2.Sybil Resistance
+		i)Proof of Work - it allows us to easily protect against Sybil attacks and keep blockchains decentralized and secure.
+Drawbacks (PoW) - It uses a lot of electricity/ energy because every single node is working hard to get the rewards. (Environmental Impact)
+		ii)Proof of Stake - nodes put up collateral(stake) as a sybil resistance mechanism taht they are going to behave honestly. ie nodes in Eth 2 put up some eth as a stake that they are going to behave honestly in the network. If they misbehave they are going to be removed some of their stake.
+In this system the miners are refered to as validators because they are validating other nodes rather than mining.
+Pros (PoS)	*Great Sybil resistance mechanism
+		*Uses much less energy because instead of all the nodes racing  to decide the next block ,one id randomly chosen
+cons (PoS)	*It is considered a slightly less decentralized network due to the upfront staking cost to participate 
+
+Types of Attacks
+	*Sybil Attack - It is when a user creates many pseudoanonymous accounts to try to influence a network
+	*51% Attack - It is when a group of nodes have enough nodes or enough power to essentially be 51% of the network and influence the network in whichever direction that they want.
+Hence the bigger the blockchain the more decentralized and the more secure it becomes. the bigger the blockchain, the more secure 	
+	
+Consensus - is how blockchains decide what the state of the chain is
+Longest Chain Rule - Whichever blockchain has the most buy-in and is the longest is the blockchain that the whole system is going to corroborate 
+
+Layer 1(L1) - Any Base layer Blockchain Implementation in which transactions are executed and confirmed
+	*Sharding and Rollups are solutions to scalability issues. The scalability issue is that there is not enough block space for the amount of transactions that want to get in. (Only so many transactions can fit into a block). This leads to high gas prices
+	
+Layer 2(L2) - Any application/network built on top of a layer 1 
+
+Blockchain Rollup - L2 Scaling solution that increases the number of transactions on the L1 chain without increasing the gas price.
+Rollups help scale Ethereum by processing transactions off-chain, bundling them together and submitting them back to Ethereum with some proof.
+The primary benefit of rollup solutions is that they reduce transaction fees and congestion by processing the transactions off the main chain
+It aims to solve the trilemma problem by processing the transactions off of the L1 Blockchain
+
+Types of Rollups (Based on how they check the validity of the transactions whether legitimate or fraudulent)
+	*Optimistic Rollups - They assume that the off-chain transactions are valid/legitimate by default. If the transactions are not challenged during the challenge period they are assumed to be valid
+	*Zero Knowledge Rollups (ZK Rollups) - They use validity or ZK proof to verify transaction correctness
+		zero-knowledge proof (ZK Proof)- A method for proving knowledge of something without revealing the thing itself
+
+Sequencers - the operator ordering transactions and sometimes bundling them together. It orders and bundles transactions before they are submitted to the main blockchain.
+
+Rollup Stage - A categorization system used to describe the decentralization and maturity of a rollup.
+
+	Rollup Stages
+Stage 0 -Full Training wheels
+	-Centralized Management
+	-Security Council make decisions
+	-Open source software for data availability for transparency and verifiability
+
+Stage 1 -Enhanced Rollup Governance
+	-Governed by smart contracts
+	-Security Council bug resolution
+	-Decentralized fraud/validity proof system
+
+Stage 2 -No training Wheels
+	-Completely decentralized
+	-Smart contracts manage the rollup
+	-Full decentralized and permissionless fraud/ validity proof system
+	=Security council address errors adjudicated on-chain
+	-User protection against governance attacks
+	
+Finality - The time taken from sending a transaction to when the transaction can be considered settles: and therefore cant be altered, reversed or canceled
+
+
+Solidity Smart Contract Development
+Solidity is the programming language primarily used for EVM-based smart contract development
+
+Keyword 'pragma' is used to specify the version of the Solidity compiler that should be used. 
+
+Compiling a contract means to convert the Solidity code into bytecode and ABI that can be understood and executed by the Ethereum Virtual Machine (EVM).
+
+SPDX-License-Identifier: MIT... always added at the top of smart contracts
+
+Basic Data Types: boolean, uint, int, address, bytes
+uint - unsigned integer i.e positive whole number, no decimals or fractions
+
+uint64 favNum = 88 //64 value represents the bits, the bigger the assigned number can be
+uint && uint256 are the same so without assigning bits the default is 256
+
+
+Function Visibility Specifiers
+public -accessible from both inside the contract and from external contracts (Creates a getter function for storage/state variables)
+private -accessible only within the current contract. It does not hide a value but only restricts its access.
+external -used only for functions. Visible only from outside the contract.
+internal -accessible by the current contract and any contracts derived from it.
+
+If a visibility specifier is not given, it defaults to internal.
+
+
+Pure and View keywords
+function retrieve() public view returns(uint256) {
+    return favoriteNumber;
+}
+
+function retrieve() public pure returns(uint256) {
+    return 7;
+}
+
+The terms view and pure are used when a function reads values from the blockchain without altering its state. Such functions will not initiate transactions but rather make calls, represented as blue buttons in the Remix interface. A pure function will prohibit any reading from the state or storage.
+
+Calling a pure or view function does cost gas only when a gas cost transaction or function is calling it
+
+
+Array of struct
+This combines two concepts: arrays and structs
+
+Person[] public list_of_people; // this is a dynamic array. We can add as many Person objects as we like, as the size of the array is not static but can grow and shrink. We can access each Person object in our array by its index.
+Person[3] public another_list_of_three_people; // this is a static array. This can only have a maximum of 3
+
+Data Locations
+Solidity can store data in **six** different locations.
+1. Calldata
+2. Memory
+3. Storage
+4. Stack
+5. Code
+6. Logs
+
+Calldata and Memory Variables
+In Solidity, `calldata` and `memory` are temporary storage locations for variables during function execution. 
+`calldata` is temporary read-only, used for function inputs that can't be modified. `memory` allows for read-write access, letting variables be changed within the function. To modify `calldata` variables, they must first be loaded into `memory`.
+
+//Calldata and Memory both mean temporary variables. Memory data can be changed while Calldata cannot.
+
+	Warning... Most Variable types default to memory automatically. However, for strings , you must specify either 'memory' or 'calldata'
+
+Storage variables
+Permanent variables that can be modified
+***If you create a variable outside a function inside of a contract it automatically becomes a storage variable***
+
