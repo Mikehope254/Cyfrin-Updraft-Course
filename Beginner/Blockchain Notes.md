@@ -97,14 +97,14 @@ Ethereum - used blockchain infrastructure and added Decentralized Agreements (Sm
 
 >> Secret Phrase > Private key ||| > Public Key > Address
 
-##The Role of Nodes in Blockchain
+## The Role of Nodes in Blockchain
 - Node: a single instance in a decentralized network
 
 - Blockchains are run by a group of different nodes, sometimes referred to as miners or validators, depending on the network. These miners get incentivized for running the blockchain by earning a fraction of the native blockchain currency for processing transactions. For instance, Ethereum miners get paid in Ether, while those in Polygon get rewarded in MATIC, the native token of Polygon. This remuneration encourages people to continue running these nodes.
 
 - Blockchain nodes keep lists of the transaction that occur hence decentralized database.
 
-##Understanding Gas in Transactions
+## Understanding Gas in Transactions
 
 - In the context of transactions, gas signifies a unit of computational complexity.
 
@@ -169,7 +169,8 @@ Ethereum - used blockchain infrastructure and added Decentralized Agreements (Sm
 - Drawbacks of Proof of Work: Environmental Impact because It uses a lot of electricity / energy because every single node is working hard to get the rewards.
 - With the above in mind, many protocols are choosing the shift to a different consensus mechanism that is more environmentally friendly. The most popular of which is...
 
-# Proof of Stake - nodes put up collateral(stake) as a sybil resistance mechanism that they are going to behave honestly.  If a node is found to be misbehaving, it's stake is slashed. This serves as a very effective sybil resistance mechanism because for each account, the validator needs to put up more stake and misbehaving risks losing all that collateral.
+# Proof of Stake
+- Nodes put up collateral(stake) as a sybil resistance mechanism that they are going to behave honestly.  If a node is found to be misbehaving, it's stake is slashed. This serves as a very effective sybil resistance mechanism because for each account, the validator needs to put up more stake and misbehaving risks losing all that collateral.
 
 - In this system the miners are referred to as validators because they are validating other nodes rather than mining.
 
@@ -181,7 +182,7 @@ Ethereum - used blockchain infrastructure and added Decentralized Agreements (Sm
 ## Cons of Proof of Stake
 - It is considered a slightly less decentralized network due to the upfront staking cost to participate 
 
-##Blockchain Attacks
+## Blockchain Attacks
 
 - There are two major types of attacks that exist in the blockchain space. 
 
