@@ -253,30 +253,6 @@ Hence the bigger the blockchain the more decentralized and the more secure it be
 
 ***
 
-Solidity Smart Contract Development
-Solidity is the programming language primarily used for EVM-based smart contract development
-
-Keyword 'pragma' is used to specify the version of the Solidity compiler that should be used. 
-
-Compiling a contract means to convert the Solidity code into bytecode and ABI that can be understood and executed by the Ethereum Virtual Machine (EVM).
-
-SPDX-License-Identifier: MIT... always added at the top of smart contracts
-
-Basic Data Types: boolean, uint, int, address, bytes
-uint - unsigned integer i.e positive whole number, no decimals or fractions
-
-uint64 favNum = 88 //64 value represents the bits, the bigger the assigned number can be
-uint && uint256 are the same so without assigning bits the default is 256
-
-
-Function Visibility Specifiers
-public -accessible from both inside the contract and from external contracts (Creates a getter function for storage/state variables)
-private -accessible only within the current contract. It does not hide a value but only restricts its access.
-external -used only for functions. Visible only from outside the contract.
-internal -accessible by the current contract and any contracts derived from it.
-
-If a visibility specifier is not given, it defaults to internal.
-
 
 Pure and View keywords
 function retrieve() public view returns(uint256) {

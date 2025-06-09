@@ -1,4 +1,8 @@
-# Setting up your first contract
+# Solidity Smart Contract Development
+
+- Solidity is the programming language primarily used for EVM-based smart contract development
+
+## Setting up your first contract
 
 - The basics of Remix and how to create and compile your first contract.
 
@@ -7,7 +11,7 @@
 - Remix IDE is used to build and develop smart contracts in solidity. It helps to easily visualize and interact with our smart contracts. It contains a file explorer that hosts all the files, a solidity compiler and a tab where you can deploy your contracts.
 
 ## Compiler Directive
-
+- Compiling a contract means to convert the Solidity code into bytecode and ABI that can be understood and executed by the Ethereum Virtual Machine (EVM).
 - The pragma directive specifies the version of the solidity compiler that you want to use to build your source file. When the compiler encounters this line, it will check its version against the one you specified here. If the compiler version is different, Remix will automatically adjust accordingly to your specifications.
 - You can specify the compiler version(s) in the following ways:
 
@@ -49,13 +53,29 @@ contract SimpleStorage {
 ```
 
 ***
-Basic Data Types: boolean, uint, int, address, bytes uint - unsigned integer i.e positive whole number, no decimals or fractions
 
-uint64 favNum = 88 //64 value represents the bits, the bigger the assigned number can be uint && uint256 are the same so without assigning bits the default is 256
+## Basic Data Types
+- boolean, uint, int, address, bytes 
+- uint: unsigned integer i.e positive whole number, no decimals or fractions. 
 
-Function Visibility Specifiers public -accessible from both inside the contract and from external contracts (Creates a getter function for storage/state variables) private -accessible only within the current contract. It does not hide a value but only restricts its access. external -used only for functions. Visible only from outside the contract. internal -accessible by the current contract and any contracts derived from it.
+```
+uint64 favNum = 88 
 
-If a visibility specifier is not given, it defaults to internal.
+```
+
+- 64 value represents the bits, the largest assigned bit number is 256. uint or uint256 are the same, so without assigning bits to uint the default is 256.
+
+# Function Visibility Specifiers 
+## public 
+- Accessible from both inside the contract and from external contracts (Creates a getter function for storage/state variables) 
+## private 
+- Accessible only within the current contract. It does not hide a value but only restricts its access. 
+## external 
+- Used only for functions. Visible only from outside the contract. 
+## internal 
+- Accessible by the current contract and any contracts derived from it.
+
+>> If a visibility specifier is not given, it defaults to internal.
 
 Pure and View keywords function retrieve() public view returns(uint256) { return favoriteNumber; }
 
