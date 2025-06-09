@@ -120,7 +120,7 @@ Person[3] public list_of_three_people; // this is a static array. This can only 
 
 - In Solidity, `calldata` and `memory` are temporary storage locations for variables during function execution. `calldata` is temporary read-only, used for function inputs that can't be modified. `memory` allows for read-write access, letting variables be changed within the function. To modify `calldata` variables, they must first be loaded into `memory`.
 
-//Calldata and Memory both mean temporary variables. Memory data can be changed while Calldata cannot.
+- Calldata and Memory both mean temporary variables. Memory data can be changed while Calldata cannot.
 
     Warning... Most Variable types default to memory automatically. However, for strings , you must specify either 'memory' or 'calldata'
 
