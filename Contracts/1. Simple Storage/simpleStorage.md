@@ -57,6 +57,19 @@ contract SimpleStorage {
 # Basic Data Types
 
 - boolean, uint, int, address, bytes 
+
+```
+bool hasFavoriteNumber = true; 
+uint256 favoriteNumber = 88; 
+int256 favoriteNumber = -88; 
+string favoriteNumber = "eighty-eight" 
+address myAddress = 0x6F60af1cd77433f84DFbFD1C0017A66A24f17e10 
+bytes32 favBytes32 = "cat"
+
+uint256 favNumber; //not initializing is equal to initializing to zero
+
+```
+
 - uint: unsigned integer i.e positive whole number, no decimals or fractions. 
 
 ```
@@ -127,3 +140,5 @@ Person[3] public list_of_three_people; // this is a static array. This can only 
 ## Storage variables
 - These are Permanent variables that can be modified.
 ***If you create a variable outside a function inside of a contract it automatically becomes a storage variable***
+
+***
