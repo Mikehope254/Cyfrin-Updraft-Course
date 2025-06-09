@@ -30,6 +30,8 @@ Ethereum - used blockchain infrastructure and added Decentralized Agreements (Sm
 
 - Testnet Faucet: a place to get free testnet ETH
 
+- Finality: The time taken from sending a transaction to when the transaction can be considered settles: and therefore cant be altered, reversed or cancelled
+
 # The Purpose Of Smart Contracts & Blockchain
 - Almost every interaction or transaction in our lives involves some form of agreement or contract.
 - Once deployed a smart contract is: 
@@ -245,10 +247,7 @@ Hence the bigger the blockchain the more decentralized and the more secure it be
 	-Completely decentralized
 	-Smart contracts manage the rollup
 	-Full decentralized and permissionless fraud/ validity proof system
-	=Security council address errors adjudicated on-chain
+	-Security council address errors adjudicated on-chain
 	-User protection against governance attacks
-	
-### Finality 
-- The time taken from sending a transaction to when the transaction can be considered settles: and therefore cant be altered, reversed or cancelled
 
 ***
