@@ -37,7 +37,7 @@
 
 - MIT is known as one of the most permissive licenses which means anybody can use this code and pretty much do whatever they want with it.
 
-## Writing the Smart Contract
+# Writing the Smart Contract
 
 - Start by writing your contract using the keyword contract. Give it a name, e.g., SimpleStorage. All the code inside the curly brackets will be considered part of this contract.
 
@@ -54,7 +54,8 @@ contract SimpleStorage {
 
 ***
 
-## Basic Data Types
+# Basic Data Types
+
 - boolean, uint, int, address, bytes 
 - uint: unsigned integer i.e positive whole number, no decimals or fractions. 
 
@@ -63,9 +64,10 @@ uint64 favNum = 88
 
 ```
 
-- 64 value represents the bits, the largest assigned bit number is 256. uint or uint256 are the same, so without assigning bits to uint the default is 256.
+- 64 value represents the bits, the largest assigned bit number is 256. **uint** or **uint256** are the same, so without assigning bits to uint the default is 256.
 
 # Function Visibility Specifiers 
+
 ## public 
 - Accessible from both inside the contract and from external contracts (Creates a getter function for storage/state variables) 
 ## private 
@@ -77,31 +79,51 @@ uint64 favNum = 88
 
 >> If a visibility specifier is not given, it defaults to internal.
 
-Pure and View keywords function retrieve() public view returns(uint256) { return favoriteNumber; }
+# Pure and View keywords 
 
-function retrieve() public pure returns(uint256) { return 7; }
+```
+function retrieve() public view returns(uint256) {
+    return favoriteNumber;
+}
 
-The terms view and pure are used when a function reads values from the blockchain without altering its state. Such functions will not initiate transactions but rather make calls, represented as blue buttons in the Remix interface. A pure function will prohibit any reading from the state or storage.
+function retrieve() public pure returns(uint256) {
+    return 7;
+}
+```
 
-Calling a pure or view function does cost gas only when a gas cost transaction or function is calling it
+- The terms view and pure are used when a function reads values from the blockchain without altering its state. Such functions will not initiate transactions but rather make calls, represented as blue buttons in the Remix interface. A pure function will prohibit any reading from the state or storage.
 
-Array of struct This combines two concepts: arrays and structs
+- Calling a pure or view function does cost gas only when a gas cost transaction or function is calling it
 
-Person[] public list_of_people; // this is a dynamic array. We can add as many Person objects as we like, as the size of the array is not static but can grow and shrink. We can access each Person object in our array by its index. Person[3] public another_list_of_three_people; // this is a static array. This can only have a maximum of 3
+# Array of struct
 
-Data Locations Solidity can store data in six different locations.
+- This combines two concepts: arrays and structs
 
-    Calldata
-    Memory
-    Storage
-    Stack
-    Code
-    Logs
+```
+Person[] public list_of_people; // this is a dynamic array. We can add as many Person objects as we like, as the size of the array is not static but can grow and shrink. We can access each Person object in our array by its index. 
 
-Calldata and Memory Variables In Solidity, calldata and memory are temporary storage locations for variables during function execution. calldata is temporary read-only, used for function inputs that can't be modified. memory allows for read-write access, letting variables be changed within the function. To modify calldata variables, they must first be loaded into memory.
+Person[3] public list_of_three_people; // this is a static array. This can only have a maximum of 3
+
+```
+
+# Data Locations 
+
+- Solidity can store data in **six** different locations.
+1. Calldata    
+2. Memory
+3. Storage
+4. Stack
+5. Code
+6. Logs
+
+# Calldata and Memory Variables 
+
+- In Solidity, `calldata` and `memory` are temporary storage locations for variables during function execution. `calldata` is temporary read-only, used for function inputs that can't be modified. `memory` allows for read-write access, letting variables be changed within the function. To modify `calldata` variables, they must first be loaded into `memory`.
 
 //Calldata and Memory both mean temporary variables. Memory data can be changed while Calldata cannot.
 
-Warning... Most Variable types default to memory automatically. However, for strings , you must specify either 'memory' or 'calldata'
+    Warning... Most Variable types default to memory automatically. However, for strings , you must specify either 'memory' or 'calldata'
 
-Storage variables Permanent variables that can be modified If you create a variable outside a function inside of a contract it automatically becomes a storage variable
+## Storage variables
+- These are Permanent variables that can be modified.
+***If you create a variable outside a function inside of a contract it automatically becomes a storage variable***
