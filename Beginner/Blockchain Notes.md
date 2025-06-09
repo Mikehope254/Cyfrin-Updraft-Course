@@ -142,6 +142,8 @@ Ethereum - used blockchain infrastructure and added Decentralized Agreements (Sm
 
 - Blockchains, by contrast, don't have this problem. If one node or one entity that runs several nodes goes down, since there are so many other independent nodes running, it doesn't matter, the blockchain and the system will persist so long as there is at least one node always running. Luckily for us, the most popular chains like Bitcoin and Ethereum have thousands and thousands of nodes. Malicious nodes are kicked from the network, or even punished in some cases. Majority rules when it comes to the blockchain. This gives blockchains this incredibly potent immutability trait where nothing can be changed or corrupted so in essence we can think of a blockchain as a decentralized database. In the case of Ethereum it has an extra additional feature where it also can do computation in a decentralized manner now.
 
+***
+
 ## Consensus
 - It is mechanism used to agree on the state or value of a blockchain. This includes Proof of Work and Proof of Stake
 
@@ -193,6 +195,8 @@ Hence the bigger the blockchain the more decentralized and the more secure it be
 	
 - Longest Chain Rule: Whichever blockchain has the most buy-in and is the longest is the blockchain that the whole system is going to corroborate 
 
+***
+
 # Layer 1 and Layer 2
 ## Layer 1(L1)
 - Any Base layer Blockchain Implementation in which transactions are executed and confirmed.
@@ -202,42 +206,52 @@ Hence the bigger the blockchain the more decentralized and the more secure it be
 ## Layer 2(L2) 
 - Any application/network built on top of a layer 1 
 
-***
+# Blockchain Rollup 
+- It is an L2 Scaling solution that increases the number of transactions on the L1 chain without increasing the gas price.
 
-Blockchain Rollup - L2 Scaling solution that increases the number of transactions on the L1 chain without increasing the gas price.
-Rollups help scale Ethereum by processing transactions off-chain, bundling them together and submitting them back to Ethereum with some proof.
-The primary benefit of rollup solutions is that they reduce transaction fees and congestion by processing the transactions off the main chain
-It aims to solve the trilemma problem by processing the transactions off of the L1 Blockchain
+- Rollups help scale Ethereum by processing transactions off-chain, bundling them together and submitting them back to Ethereum with some proof.
 
-Types of Rollups (Based on how they check the validity of the transactions whether legitimate or fraudulent)
-	*Optimistic Rollups - They assume that the off-chain transactions are valid/legitimate by default. If the transactions are not challenged during the challenge period they are assumed to be valid
-	*Zero Knowledge Rollups (ZK Rollups) - They use validity or ZK proof to verify transaction correctness
-		zero-knowledge proof (ZK Proof)- A method for proving knowledge of something without revealing the thing itself
+- The primary benefit of rollup solutions is that they reduce transaction fees and congestion by processing the transactions off the main chain. It aims to solve the trilemma problem by processing the transactions off of the L1 Blockchain.
 
-Sequencers - the operator ordering transactions and sometimes bundling them together. It orders and bundles transactions before they are submitted to the main blockchain.
+## Types of Rollups (Based on how they check the validity of the transactions whether legitimate or fraudulent)
 
-Rollup Stage - A categorization system used to describe the decentralization and maturity of a rollup.
+### Optimistic Rollups 
+- They assume that the off-chain transactions are valid/legitimate by default. If the transactions are not challenged during the challenge period they are assumed to be valid.
+### Zero Knowledge Rollups (ZK Rollups) 
+- They use validity or ZK proof to verify transaction correctness.
 
-	Rollup Stages
-Stage 0 -Full Training wheels
+>> zero-knowledge proof (ZK Proof)- A method for proving knowledge of something without revealing the thing itself
+
+## Sequencers 
+- The operator ordering transactions and sometimes bundling them together. It orders and bundles transactions before they are submitted to the main blockchain.
+
+# Rollup Stages
+- A categorization system used to describe the decentralization and maturity of a rollup.
+
+## Stage 0 
+    -Full Training wheels
 	-Centralized Management
 	-Security Council make decisions
 	-Open source software for data availability for transparency and verifiability
 
-Stage 1 -Enhanced Rollup Governance
+## Stage 1 
+    -Enhanced Rollup Governance
 	-Governed by smart contracts
 	-Security Council bug resolution
 	-Decentralized fraud/validity proof system
 
-Stage 2 -No training Wheels
+## Stage 2 
+    -No training Wheels
 	-Completely decentralized
 	-Smart contracts manage the rollup
 	-Full decentralized and permissionless fraud/ validity proof system
 	=Security council address errors adjudicated on-chain
 	-User protection against governance attacks
 	
-Finality - The time taken from sending a transaction to when the transaction can be considered settles: and therefore cant be altered, reversed or canceled
+### Finality 
+- The time taken from sending a transaction to when the transaction can be considered settles: and therefore cant be altered, reversed or cancelled
 
+***
 
 Solidity Smart Contract Development
 Solidity is the programming language primarily used for EVM-based smart contract development
