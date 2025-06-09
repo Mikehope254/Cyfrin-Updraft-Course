@@ -135,10 +135,49 @@ Person[3] public list_of_three_people; // this is a static array. This can only 
 
 - Calldata and Memory both mean temporary variables. Memory data can be changed while Calldata cannot.
 
-    Warning... Most Variable types default to memory automatically. However, for strings , you must specify either 'memory' or 'calldata'
+> Warning... Most Variable types default to memory automatically. However, for strings , you must specify either 'memory' or 'calldata'
 
 ## Storage variables
 - These are Permanent variables that can be modified.
 ***If you create a variable outside a function inside of a contract it automatically becomes a storage variable***
 
 ***
+
+# Deploying your first Smart Contract
+
+## Deploying your first Smart Contract
+
+ Go into the deployment tab and switch from the local virtual environment (Remix VM) to the Injected Provider - MetaMask. This action will allow Remix to send requests and interact with your MetaMask account.
+
+![deploymentImage1](../deploymentImages/deploying1.png)
+
+You will be then prompted to select an account from your MetaMask wallet. Once you've connected that account to Remix, you should see a confirmation that the account is properly linked and that you are using the Sepolia testnet.
+
+![deploymentImage2](../deploymentImages/deploying2.png)
+
+Ensure you have enough Sepolia ETH in your account, which you can obtain from a [faucet](https://www.alchemy.com/faucets/ethereum-sepolia). Once your balance is sufficient, you can proceed by clicking the "Deploy" button.
+
+After that, MetaMask will ask to sign and send the transaction on the testnet.
+
+![deploymentImage3](../deploymentImages/deploying3.png)
+
+Once the transaction is executed, the contract address will be listed under deployed contracts, along with the transaction details. This is how the deployment transaction is displayed on Etherscan.
+
+![deploymentImage4](../deploymentImages/deploying4.png)
+
+
+## Contract interaction
+
+Since the contract has been deployed, we can now interact with it and **update the blockchain**. For example, if you want to store a number, you can do so by clicking the button 'store': MetaMask will ask for another transaction confirmation, that will update the favorite number. We can check the details on etherscan at the deployed address:
+
+![deploymentImage5](../deploymentImages/deploying5.png)
+
+> 👀❗**IMPORTANT**:br
+> View and pure functions will not send transactions
+
+- It's possible to deploy a contract to different testnets or a real mainnet, just by switching the MetaMask network. Be sure to have enough net-compatible ETHs to deploy your contract.
+
+
+## Conclusion
+
+Deploying a Solidity contract to a testnet is a crucial step in the development process, allowing you to test its functionality in a live blockchain environment without the risk of using real Ether. Always remember to perform necessary audits and tests to confirm the contract's safety and correctness before deployment.
