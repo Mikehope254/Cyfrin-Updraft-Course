@@ -249,5 +249,6 @@ Hence the bigger the blockchain the more decentralized and the more secure it be
 	-Full decentralized and permissionless fraud/ validity proof system
 	-Security council address errors adjudicated on-chain
 	-User protection against governance attacks
-
+	
+	
 ***
