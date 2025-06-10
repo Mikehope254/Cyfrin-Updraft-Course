@@ -185,10 +185,10 @@ Deploying a Solidity contract to a testnet is a crucial step in the development 
 # Quiz: Simple Storage Mid Section Recap
 
 **1. Which of these is NOT a valid Solidity type?**
-float
-uint256
-bytes32
-bool
+* *a) float*
+* *b) uint256*
+* *c) bytes32*
+* *d) bool*
 
 <details>
   <summary>Click to reveal answer</summary>
@@ -207,10 +207,10 @@ To create code that runs before or after a function.
 </details>
 
 **3. Which of the following is a location for storage that is NOT temporary?**
-Storage
-Memory
-Calldata
-Public
+* *a) Storage*
+* *b) Memory*
+* *c) Calldata*
+* *d) Public*
 
 <details>
   <summary>Click to reveal answer</summary>
@@ -218,10 +218,10 @@ Public
 </details>
 
 **4. In Solidity, which of the following function visibility specifiers allows a function to be called internally within the contract and externally by users or other contracts?**
-external
-private
-internal
-public
+* *a)external*
+* *b)private*
+* *c)internal*
+* *d)public*
 
 <details>
   <summary>Click to reveal answer</summary>
@@ -229,10 +229,10 @@ public
 </details>
 
 **5. Why can't the storage location be used for new variables inside a function in Solidity?**
-Because storage variables are meant to persist between function calls and are only declared at the contract level.
-Because storage variables can only be used for external function parameters.
-Because storage variables are reserved for constants only.
-Because storage variables are automatically initialized to zero.
+* *a) Because storage variables are meant to persist between function calls and are only declared at the contract level.*
+* *b) Because storage variables can only be used for external function parameters.*
+* *c) Because storage variables are reserved for constants only.*
+* *d) Because storage variables are automatically initialized to zero.*
 
 <details>
   <summary>Click to reveal answer</summary>
