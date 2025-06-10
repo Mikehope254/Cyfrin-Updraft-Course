@@ -145,7 +145,7 @@ Person[3] public list_of_three_people; // this is a static array. This can only 
 
 # Deploying your first Smart Contract
 
-## Deploying your first Smart Contract
+## Deploying on a testnet
 
  Go into the deployment tab and switch from the local virtual environment (Remix VM) to the Injected Provider - MetaMask. This action will allow Remix to send requests and interact with your MetaMask account.
 
@@ -165,19 +165,19 @@ Once the transaction is executed, the contract address will be listed under depl
 
 ![deploymentImage4](../deploymentImages/deploying4.png)
 
-
 ## Contract interaction
 
 Since the contract has been deployed, we can now interact with it and **update the blockchain**. For example, if you want to store a number, you can do so by clicking the button 'store': MetaMask will ask for another transaction confirmation, that will update the favorite number. We can check the details on etherscan at the deployed address:
 
 ![deploymentImage5](../deploymentImages/deploying5.png)
 
-> 👀❗**IMPORTANT**:br
+> 👀❗**IMPORTANT** 
 > View and pure functions will not send transactions
 
 - It's possible to deploy a contract to different testnets or a real mainnet, just by switching the MetaMask network. Be sure to have enough net-compatible ETHs to deploy your contract.
 
-
 ## Conclusion
 
 Deploying a Solidity contract to a testnet is a crucial step in the development process, allowing you to test its functionality in a live blockchain environment without the risk of using real Ether. Always remember to perform necessary audits and tests to confirm the contract's safety and correctness before deployment.
+
+***
