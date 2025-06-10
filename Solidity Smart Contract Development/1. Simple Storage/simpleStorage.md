@@ -182,6 +182,103 @@ Deploying a Solidity contract to a testnet is a crucial step in the development 
 
 ***
 
+# Quiz: Simple Storage Mid Section Recap
+
+**1. Which of these is NOT a valid Solidity type?**
+float
+uint256
+bytes32
+bool
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>float</p>
+</details>
+
+**2. What is the struct keyword used for?**
+To declare a variable to be in storage.
+To define an array.
+To establish a new data type that groups multiple variables.
+To create code that runs before or after a function.
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>To establish a new data type that groups multiple variables.</p>
+</details>
+
+**3. Which of the following is a location for storage that is NOT temporary?**
+Storage
+Memory
+Calldata
+Public
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>Storage</p>
+</details>
+
+**4. In Solidity, which of the following function visibility specifiers allows a function to be called internally within the contract and externally by users or other contracts?**
+external
+private
+internal
+public
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>Public</p>
+</details>
+
+**5. Why can't the storage location be used for new variables inside a function in Solidity?**
+Because storage variables are meant to persist between function calls and are only declared at the contract level.
+Because storage variables can only be used for external function parameters.
+Because storage variables are reserved for constants only.
+Because storage variables are automatically initialized to zero.
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>Public</p>
+</details>
+
+**6. Given the following mapping mapping(address->uint256), what is the default value returned when accessing a key that does not exist?**
+Null
+Zero
+Empty string
+Error
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>Zero</p>
+</details>
+
+**7. What is the purpose of the 'view' keyword when declaring a function in Solidity?**
+To restrict function access to the current contract only.
+To declare a function that can be accessed from both inside and outside the contract.
+To enable the function to receive Ether along with a call.
+To indicate that the function only reads state data and does not modify it.
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>To indicate that the function only reads state data and does not modify it.</p>
+</details>
+
+**8. Which of the following code snippets is a valid way to declare a public function that accepts a uint256 parameter and sets a state variable to its value?**
+function store public(uint256 _favoriteNumber) { favoriteNumber = _favoriteNumber; }
+function store(uint256 _favoriteNumber) public { favoriteNumber = _favoriteNumber; }
+function store(uint256 _favoriteNumber) { favoriteNumber = _favoriteNumber; }
+function store(uint256 _favoriteNumber) public { _favoriteNumber = favoriteNumber; }
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>function store(uint256 _favoriteNumber) public { favoriteNumber = _favoriteNumber; }</p>
+</details>
+
+**9. What keyword can be used in a function declaration to specify that the function can only be accessed from within the same contract?**
+internal
+public
+external
+private
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>private</p>
+</details>
+
 # Zksync Bridging
 A guide to bridging from the Ethereum Sepolia testnet to the zkSync Sepolia testnet. This is a step-by-step guide to acquire zkSync ETH on the testnet using the _bridging method_.
 
@@ -202,3 +299,4 @@ A guide to bridging from the Ethereum Sepolia testnet to the zkSync Sepolia test
 - While waiting, you can add the zkSync Sepolia Testnet to MetaMask. Go to [Chainlist](https://chainlist.org/), search for "zkSync Sepolia" while including testnets, and connect your wallet. Approve the network addition and switch to the zkSync Sepolia Testnet.
 
 - Once the transaction completes, you will see the funds appear in your MetaMask wallet under the zkSync Sepolia Testnet. With the correct funds in your wallet, you can now proceed to deploy contracts in Remix.
+
