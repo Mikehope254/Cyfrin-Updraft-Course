@@ -240,40 +240,40 @@ To create code that runs before or after a function.
 </details>
 
 **6. Given the following mapping mapping(address->uint256), what is the default value returned when accessing a key that does not exist?**
-Null
-Zero
-Empty string
-Error
+* *a) Null*
+* *b) Zero*
+* *c) Empty string*
+* *d) Error*
 <details>
   <summary>Click to reveal answer</summary>
   <p>Zero</p>
 </details>
 
 **7. What is the purpose of the 'view' keyword when declaring a function in Solidity?**
-To restrict function access to the current contract only.
-To declare a function that can be accessed from both inside and outside the contract.
-To enable the function to receive Ether along with a call.
-To indicate that the function only reads state data and does not modify it.
+* *a)To restrict function access to the current contract only.*
+* *b)To declare a function that can be accessed from both inside and outside the contract.*
+* *c)To enable the function to receive Ether along with a call.*
+* *d)To indicate that the function only reads state data and does not modify it.*
 <details>
   <summary>Click to reveal answer</summary>
   <p>To indicate that the function only reads state data and does not modify it.</p>
 </details>
 
 **8. Which of the following code snippets is a valid way to declare a public function that accepts a uint256 parameter and sets a state variable to its value?**
-function store public(uint256 _favoriteNumber) { favoriteNumber = _favoriteNumber; }
-function store(uint256 _favoriteNumber) public { favoriteNumber = _favoriteNumber; }
-function store(uint256 _favoriteNumber) { favoriteNumber = _favoriteNumber; }
-function store(uint256 _favoriteNumber) public { _favoriteNumber = favoriteNumber; }
+* *a)function store public(uint256 _favoriteNumber) { favoriteNumber = _favoriteNumber; }*
+* *b)function store(uint256 _favoriteNumber) public { favoriteNumber = _favoriteNumber; }*
+* *c)function store(uint256 _favoriteNumber) { favoriteNumber = _favoriteNumber; }*
+* *d)function store(uint256 _favoriteNumber) public { _favoriteNumber = favoriteNumber; }*
 <details>
   <summary>Click to reveal answer</summary>
   <p>function store(uint256 _favoriteNumber) public { favoriteNumber = _favoriteNumber; }</p>
 </details>
 
 **9. What keyword can be used in a function declaration to specify that the function can only be accessed from within the same contract?**
-internal
-public
-external
-private
+* *a) internal*
+* *b) public*
+* *c) external*
+* *d) private*
 <details>
   <summary>Click to reveal answer</summary>
   <p>private</p>
@@ -300,3 +300,4 @@ A guide to bridging from the Ethereum Sepolia testnet to the zkSync Sepolia test
 
 - Once the transaction completes, you will see the funds appear in your MetaMask wallet under the zkSync Sepolia Testnet. With the correct funds in your wallet, you can now proceed to deploy contracts in Remix.
 
+# Zksync Plugin
