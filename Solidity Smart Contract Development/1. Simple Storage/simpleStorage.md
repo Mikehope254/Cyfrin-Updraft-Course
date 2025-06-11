@@ -42,14 +42,12 @@
 - Start by writing your contract using the keyword contract. Give it a name, e.g., SimpleStorage. All the code inside the curly brackets will be considered part of this contract.
 
 ```
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 contract SimpleStorage {
     //here we'll place the content of the contract
 }
-
 ```
 
 ***
@@ -67,14 +65,12 @@ address myAddress = 0x6F60af1cd77433f84DFbFD1C0017A66A24f17e10
 bytes32 favBytes32 = "cat"
 
 uint256 favNumber; //not initializing is equal to initializing to zero
-
 ```
 
 - uint: unsigned integer i.e positive whole number, no decimals or fractions. 
 
 ```
 uint64 favNum = 88 
-
 ```
 
 - 64 value represents the bits, the largest assigned bit number is 256. **uint** or **uint256** are the same, so without assigning bits to uint the default is 256.
@@ -116,7 +112,6 @@ function retrieve() public pure returns(uint256) {
 Person[] public list_of_people; // this is a dynamic array. We can add as many Person objects as we like, as the size of the array is not static but can grow and shrink. We can access each Person object in our array by its index. 
 
 Person[3] public list_of_three_people; // this is a static array. This can only have a maximum of 3
-
 ```
 
 # Data Locations 
