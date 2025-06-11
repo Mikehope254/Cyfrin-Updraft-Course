@@ -274,6 +274,8 @@ To create code that runs before or after a function.
   <p>private</p>
 </details>
 
+***
+
 # Zksync Bridging
 A guide to bridging from the Ethereum Sepolia testnet to the zkSync Sepolia testnet. This is a step-by-step guide to acquire zkSync ETH on the testnet using the _bridging method_.
 
@@ -316,4 +318,7 @@ Compile the `SimpleStorage.sol` file by hitting the "Compile" button.
 ![wallet](../deploymentImages/wallet.png)
 
 ## Verifying Deployment
-After hitting the deploy button, MetaMask will request a **signature**. Approve it, and after a short delay, a detailed output will appear indicating the deployment status. If the terminal output shows a green "verification successful" message, it means that your contract has been both deployed and verified correctly.
+- After hitting the deploy button, MetaMask will request a **signature**. Approve it, and after a short delay, a detailed output will appear indicating the deployment status. If the terminal output shows a green "verification successful" message, it means that your contract has been both deployed and verified correctly.
+
+## Checking the Deployment
+- To check our deployment, you can copy the contract address and paste it into the [zksync Sepolia explorer](https://sepolia.explorer.zksync.io/). Here, you can view the contract details.

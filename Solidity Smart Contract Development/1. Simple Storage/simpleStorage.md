@@ -274,6 +274,8 @@ To create code that runs before or after a function.
   <p>private</p>
 </details>
 
+***
+
 # Zksync Bridging
 A guide to bridging from the Ethereum Sepolia testnet to the zkSync Sepolia testnet. This is a step-by-step guide to acquire zkSync ETH on the testnet using the _bridging method_.
 
@@ -320,3 +322,8 @@ Compile the `SimpleStorage.sol` file by hitting the "Compile" button.
 
 ## Checking the Deployment
 - To check our deployment, you can copy the contract address and paste it into the [zksync Sepolia explorer](https://sepolia.explorer.zksync.io/). Here, you can view the contract details.
+
+# Zksync Remix Plugin Minor Bug
+> Ensure that your `SimpleStorage.sol` smart contract is on Remix. Then, you can enter the zkSync plugin and compile the file. However, even after a successful compilation, the deploy tab will still display the message _`no smart contracts ready for deployment`_.
+
+> This issue arises due to a small bug in the plugin, which requires your smart contracts to be inside a **`contracts`** **folder**. To resolve this, you can create a new folder named 'contracts' and move your smart contract into it. You can then proceed to compile the contract again, and you should be able to deploy it without any issues.
