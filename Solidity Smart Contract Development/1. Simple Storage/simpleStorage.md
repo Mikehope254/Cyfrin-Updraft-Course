@@ -327,3 +327,16 @@ Compile the `SimpleStorage.sol` file by hitting the "Compile" button.
 > Ensure that your `SimpleStorage.sol` smart contract is on Remix. Then, you can enter the zkSync plugin and compile the file. However, even after a successful compilation, the deploy tab will still display the message _`no smart contracts ready for deployment`_.
 
 > This issue arises due to a small bug in the plugin, which requires your smart contracts to be inside a **`contracts`** **folder**. To resolve this, you can create a new folder named 'contracts' and move your smart contract into it. You can then proceed to compile the contract again, and you should be able to deploy it without any issues.
+
+#Zksync Interactions
+> In the zkSync module section `transactions`, you'll find buttons for calling `SimpleStorage` functions like `addPerson`, `listOfPeople`, `nameToFavoriteNumber`, `retrieve`, and `store`. Clicking the blue buttons will display the output in the terminal, while the orange buttons are used for storing values.
+
+***
+
+# Section Recap
+
+## EVM (Ethereum Virtual Machine)
+- It is a decentralized computational engine that executes smart contracts. It is a standard for how to compile and deploy smart contracts to blockchain. Any contract that it's written in Solidity, can be deployed to any EVM-compatible blockchain. Examples of such blockchains and Layer 2 solutions include **Ethereum**, **Polygon**, **Arbitrum**, **Optimism**, and **ZKsync**.
+
+> 🚧 **WARNING**\
+> Although a blockchain like ZKsync may be EVM-compatible, it is essential to verify that all Solidity keywords are supported
