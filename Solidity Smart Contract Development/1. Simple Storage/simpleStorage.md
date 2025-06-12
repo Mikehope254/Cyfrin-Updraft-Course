@@ -52,6 +52,40 @@ contract SimpleStorage {
 
 ***
 
+# Quiz: Simple Storage Intro
+**1. What programming language is primarily used for EVM-based smart contract development?**
+* *a) Solidity*
+* *b) Remix*
+* *c) JavaScript*
+* *d) TypeScript*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>Solidity</p>
+</details>
+
+**2. What's the keyword pragma used for?**
+* *a) It defines custom data types in Solidity.*
+* *b) It is used to create external libraries for Solidity functions.*
+* *c) It specifies the version of the Solidity compiler that should be used.*
+* *d) It is used to handle low-level assembly code in Solidity.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>It specifies the version of the Solidity compiler that should be used.</p>
+</details>
+
+**3. What does compiling a contract mean?**
+* *a) It optimizes the Solidity code to minimize gas usage and directly generates a deployable smart contract without bytecode.*
+* *b)It creates a stateful binary representation of the contract that includes gas pricing predictions and ensures compatibility with all Ethereum forks.*
+* *c) It converts the Solidity code into bytecode and ABI that can be understood and executed by the Ethereum Virtual Machine (EVM).*
+* *d) It converts high-level Solidity functions into machine code that runs natively on any blockchain, eliminating the need for the EVM.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>It converts the Solidity code into bytecode and ABI that can be understood and executed by the Ethereum Virtual Machine (EVM).</p>
+</details>
+
 # Basic Data Types
 
 - boolean, uint, int, address, bytes 
