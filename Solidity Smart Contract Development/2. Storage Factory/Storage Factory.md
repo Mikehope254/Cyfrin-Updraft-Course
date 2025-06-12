@@ -1,7 +1,6 @@
 # Storage Factory
 
 ## Introduction
-
 You can find the code for this section in the [Remix Storage Factory Github repository](https://github.com/cyfrin/remix-storage-factory-f23). In these nine lessons, we'll work with three new contracts:
 
 1. `SimpleStorage.sol` - the contract we build in the previous section (simpleStorage), with some modifications
@@ -10,7 +9,6 @@ You can find the code for this section in the [Remix Storage Factory Github repo
 
 
 ## Section Overview
-
 ```
 contract StorageFactory {
     SimpleStorage[] public listOfSimpleStorageContracts;
@@ -29,3 +27,32 @@ contract StorageFactory {
 
 ## Conclusion
 - The `StorageFactory` contract manages numerous instances of an external contract `SimpleStorage`. It provides functionality to deploy new contract instances dynamically and allows for the storage and retrieval of values from each instance. These instances are maintained and organized within an array, enabling efficient tracking and interaction.
+
+***
+
+# Setting the Project
+- In this `StorageFactory` setup, we'll explore what _composability_ means, showing its ability to deploy and interact with external `SimpleStorage` contracts.
+
+- Compossability: The ability for contracts to interact with each other seamlessly
+
+> 👀❗**IMPORTANT**\
+> One of the fundamental aspects of blockchain development is the seamless and permissionless interaction between contracts, known as **composability**. This is particularly crucial in decentralized finance (DeFi), where complex financial products interact effortlessly through common smart contract interfaces.
+
+Let's set up the backbone of the code, that contains the function `createSimplestorageContract`. This function will deploy a `SimpleStorage` contract and save the result into a _storage variable_:
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+contract StorageFactory {
+
+    function createSimplestorageContract() public {
+        // How does StorageFactory know what SimpleStorage looks like?
+    }
+}
+```
+
+We need to establish a connection between the two contracts, since `StorageFactory` needs to have a complete knowledge of `SimpleStorage`. One first approach could be copying the `SimpleStorage` contract above `StorageFactory`.
+
+> 🗒️ **NOTE**\
+> It's allowed to have multiple contracts in the same file. As best practice, however, it's recommended to use only one file for each contract
