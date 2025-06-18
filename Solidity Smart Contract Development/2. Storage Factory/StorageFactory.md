@@ -257,3 +257,16 @@ function store(uint256 _newFavNumber) public override {
 
 ## Conclusion
 - We utilized inheritance to modify the `SimpleStorage` contract, without rewriting all its code. After deploying the contract `AddFiveStorage` and storing the number 2, it will return the `favoriteNumber` 7. This confirms that the `store` function in `AddFiveStorage` contract successfully overrides the existent `store` function in `SimpleStorage`
+
+
+# Quiz: Storage Factory Recap
+**1. What must be included when overriding a method from a parent contract in Solidity?**
+* *a) The function name, return type, and override keyword.*
+* *b) The function name, parameters, return type, and virtual keyword.*
+* *c) The function parameters, override keyword, and function body.*
+* *d) The function name, parameters, visibility, return type, and override keyword.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>d) The function name, parameters, visibility, return type, and override keyword.</p>
+</details>
