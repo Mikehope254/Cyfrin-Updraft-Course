@@ -270,3 +270,25 @@ function store(uint256 _newFavNumber) public override {
   <summary>Click to reveal answer</summary>
   <p>d) The function name, parameters, visibility, return type, and override keyword.</p>
 </details>
+
+**2. How are the keywords override and virtual used together in Solidity?**
+* *a) virtual is used to prevent a function from being overridden, while override is used to define new functions that cannot be overridden.*
+* *b) override is used in a parent contract to mark functions that can be overridden, while virtual is used in a child contract to override those functions.*
+* *c) virtual is used in a parent contract to allow a function to be overridden, while override is used in a child contract to provide a new implementation for that function.*
+* *d) virtual is used to declare a function in a child contract, while override is used to make a function in the parent contract final.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) virtual is used in a parent contract to allow a function to be overridden, while override is used in a child contract to provide a new implementation for that function.</p>
+</details>
+
+**3. What does the new keyword tell to the compiler?**
+* *a) It tells the compiler to allocate gas for dynamic contract execution within loops.*
+* *b) It forces the compiler to overwrite the existing contract in the EVM with the latest bytecode*
+* *c) It tells the compiler that a new contract instance is intended to be deployed after compilation.*
+* *d) It tells the compiler to allocate memory for complex data types like structs and arrays.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) virtual is used in a parent contract to allow a function to be overridden, while override is used in a child contract to provide a new implementation for that function.</p>
+</details>
