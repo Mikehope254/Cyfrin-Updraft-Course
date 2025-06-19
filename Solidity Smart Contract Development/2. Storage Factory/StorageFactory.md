@@ -8,7 +8,7 @@ You can find the code for this section in the [Remix Storage Factory Github repo
 3. `StorageFactory.sol` - a contract that will _deploy_ a `SimpleStorage` contract and _interact_ with it
 
 ## Section Overview
-```
+```solidity
 contract StorageFactory {
     SimpleStorage[] public listOfSimpleStorageContracts;
 
@@ -37,7 +37,7 @@ contract StorageFactory {
 
 Let's set up the backbone of the code, that contains the function `createSimplestorageContract`. This function will deploy a `SimpleStorage` contract and save the result into a _storage variable_:
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
@@ -60,7 +60,7 @@ We need to establish a connection between the two contracts, since `StorageFacto
 ## Creating a new variable
 - Following the format _type-visibility-name_, we can declare a new _state variable_ of type `SimpleStorage`.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
@@ -92,7 +92,7 @@ contract StorageFactory {
 1. **No cluttering**: it prevents your current file from being cluttered with numerous lines of code, keeping it clean and organized.
 2. **Simplified maintenance**: by keeping the code in separate files, it becomes easier to maintain and update individual components without affecting the entire codebase. For example, if we change some lines inside `SimpleStorage`, we would have also to constantly copy-paste the modified content into `StorageFactory`
 
-```
+```solidity
 import "./SimpleStorage.sol";
 ```
 
@@ -104,13 +104,13 @@ import "./SimpleStorage.sol";
 
 - This can be prevented with **named imports**, which allow you to selectively import only the specific contracts you intend to use:
 
-```
+```solidity
 import { SimpleStorage } from "./SimpleStorage.sol";
 ```
 
 You can also use named imports to import multiple contracts:
 
-```
+```solidity
 import { SimpleStorage, SimpleStorage1 } from "./SimpleStorage.sol";
 ```
 
@@ -128,13 +128,13 @@ import { SimpleStorage, SimpleStorage1 } from "./SimpleStorage.sol";
 
 - To solve this issue we can create a variable `listOfSimpleStorageContracts`, which is an array of `SimpleStorage` contracts. In this way, whenever a contract is created, it gets added to a dynamic array.
 
-```
+```solidity
 SimpleStorage[] public listOfSimpleStorageContracts;
 ```
 
 - We can then modify the function `createSimpleStorageContract`, pushing the newly deployed contract to this variable.
 
-```
+```solidity
 function createSimpleStorageContract() public {
     SimpleStorage simpleStorageContractVariable = new SimpleStorage();
     listOfSimpleStorageContracts.push(simpleStorageContractVariable);
@@ -146,7 +146,7 @@ function createSimpleStorageContract() public {
 ## Simple Storage interaction
 - `StorageFactory` can interact with the deployed contracts by calling their `store` function. To do this we need to create a **function** `sfStore`:
 
-```
+```solidity
 function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) public {
     //SimpleStorage store function will be called here
 }
@@ -170,7 +170,7 @@ function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) publ
 
 - We can now proceed to store a new number on a `SimpleStorage` contract:
 
-```
+```solidity
 function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) public {
     listOfSimpleStorageContracts[_simpleStorageIndex].store( _simpleStorageNumber);
 }
@@ -178,7 +178,7 @@ function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) publ
 
 - We can then retrieve the stored value with a _get_ function:
 
-```
+```solidity
 function sfGet(uint256 _simpleStorageIndex) public view returns (uint256) {
         // return SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).retrieve();
         return listOfSimpleStorageContracts[_simpleStorageIndex].retrieve();
@@ -199,7 +199,7 @@ The `StorageFactory` contract was able to create a list of `SimpleStorage` contr
 
 Let's begin by creating a new file `AddFiveStorage.sol` and name-importing `SimpleStorage.sol`:
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 import {SimpleStorage} from "./SimpleStorage.sol";
@@ -212,7 +212,7 @@ contract AddFiveStorage is SimpleStorage {}
 ## Override and Virtual
 - The `AddFiveStorage` contract now inherits all methods from `SimpleStorage`. It's possible to add new functions to it, for example:
 
-```
+```solidity
 function sayHello() public pure returns(string memory) {
     return "Hello";
 }
@@ -220,28 +220,28 @@ function sayHello() public pure returns(string memory) {
 
 - We can also modify existing functions from `SimpleStorage` by using the **`override`** keyword. Let's say that we want to modify the `store` function, adding '5' to the favorite number being stored. If we copy the exact signature of the `store` function, an error will occur:
 
-```
+```solidity
 function store(uint256 _newFavNumber) public {}
 ```
 
-```
+```solidity
 TypeError: Overriding function is missing "override" specifier.
 ```
 
 > 🗒️ **NOTE**\
 > To override a method from the parent contract, we must replicate the exact function **signature**, including its name, parameters and adding the visibility and the `override` keyword to it:
 
-```
+```solidity
 function store(uint256 _newFavNumber) public override {}
 ```
 - Yet, another error will pop up:
 
-```
+```solidity
 TypeError: Trying to override a non-virtual function.
 ```
 - To address this, we need to mark the `store` function in `SimpleStorage.sol` as **virtual**, enabling it to be overridden by child contracts:
 
-```
+```solidity
 function store(uint256 favNumber) public virtual {
     // function body
 }
@@ -249,7 +249,7 @@ function store(uint256 favNumber) public virtual {
 
 - Finally, we can add the new functionality to the `store` function in `AddFiveStorage`, allowing it to add '5' to the stored `favoriteNumber`:
 
-```
+```solidity
 function store(uint256 _newFavNumber) public override {
     favoriteNumber = _newFavNumber + 5;
 }
@@ -301,14 +301,14 @@ function store(uint256 _newFavNumber) public override {
 
 - Contracts can also be **imported**, which is equivalent to copying the code into the file but with the advantage of enhanced code reusability and modularity. It's good practice to use _named imports_, selecting only the contracts we intend to use from the file.
 
-```
+```solidity
 import { Contract as MyContract } from './myOtherContract.sol';
 ```
 
 ## Contracts interaction
 - Solidity lets you interact with other contracts. To do so we need the contract's address and its ABI (Application Binary Interface):
 
-```
+```solidity
 contract AddFiveStorage is SimpleStorage {}
 ```
 
@@ -324,7 +324,7 @@ contract ChildContract is ParentContract {
 }
 ```
 
-```
+```solidity
 //parent contract
 function store(uint256 _num) public virtual {
     // function body
@@ -333,5 +333,6 @@ function store(uint256 _num) public virtual {
 
 ## Conclusion
 - In this section, we explored deploying multiple contract instances using the `new` keyword and enhancing code reusability through contract _imports_. We also covered interacting with other contracts using their address and ABI. Additionally, we learned about inheritance and function overriding, allowing derived contracts to customize inherited functionalities.
+
 - 💡 **TIP**\
 When you finish a section, take a moment to acknowledge your progress, celebrate it and share your achievements with your community.
