@@ -41,7 +41,7 @@
 
 - Start by writing your contract using the keyword contract. Give it a name, e.g., SimpleStorage. All the code inside the curly brackets will be considered part of this contract.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -90,7 +90,7 @@ contract SimpleStorage {
 
 - boolean, uint, int, address, bytes 
 
-```
+```solidity
 bool hasFavoriteNumber = true; 
 uint256 favoriteNumber = 88; 
 int256 favoriteNumber = -88; 
@@ -103,7 +103,7 @@ uint256 favNumber; //not initializing is equal to initializing to zero
 
 - uint: unsigned integer i.e positive whole number, no decimals or fractions. 
 
-```
+```solidity
 uint64 favNum = 88 
 ```
 
@@ -124,7 +124,7 @@ uint64 favNum = 88
 
 # Pure and View keywords 
 
-```
+```solidity
 function retrieve() public view returns(uint256) {
     return favoriteNumber;
 }
@@ -142,7 +142,7 @@ function retrieve() public pure returns(uint256) {
 
 - This combines two concepts: arrays and structs
 
-```
+```solidity
 Person[] public list_of_people; // this is a dynamic array. We can add as many Person objects as we like, as the size of the array is not static but can grow and shrink. We can access each Person object in our array by its index. 
 
 Person[3] public list_of_three_people; // this is a static array. This can only have a maximum of 3
@@ -378,8 +378,9 @@ Compile the `SimpleStorage.sol` file by hitting the "Compile" button.
 ## Contract Setup
 - Before writing any smart contract, always specify the Solidity version you intend to work with. Additionally, include the SPDX license identifier at the top of your file.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
+
 pragma solidity >=0.7.0 <0.9.0;
 ```
 
