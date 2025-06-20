@@ -175,3 +175,29 @@ During a _**contract interaction transaction**_, it will instead be populated wi
 ## Conclusion
 
 **Reverts** and **gas usage** help maintain the integrity of the blockchain state. _Reverts_ will undo transactions when failures occur, while _gas_ enables transactions execution and runs the EVM. When a transaction fails, the gas consumed is not recoverable. To manage this, Ethereum allows users to set the maximum amount of gas they're willing to pay for each transaction.
+
+
+**🧑‍💻 Bob sets his gas price to 20 Gwei and his gas limit to 50,000 units. The transaction consumes 30,000 units of gas before a revert occurs. How much ETH will be effectively charged?**
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>
+- Gas Price: 20 Gwei
+- Gas Consumed (before revert): 30,000 units
+
+Effective Charge = Gas Consumed (before revert) × Gas Price
+
+Effective Charge = 30,000 units × 20 Gwei
+
+1 ETH = 1,000,000,000 Gwei (10^9 Gwei)
+So, 1 Gwei = 0.000000001 ETH (10^-9 ETH)
+
+Effective Charge = 30,000 × 20 × 10^-9 ETH
+Effective Charge = 0.0006 ETH
+
+**Therefore, Bob will be effectively charged 0.0006 ETH.**
+
+> The gas limit of 50,000 units is the maximum Bob was willing to spend, but since the transaction only consumed 30,000 units before reverting, he is only charged for the gas actually used.
+
+</p>
+</details>
