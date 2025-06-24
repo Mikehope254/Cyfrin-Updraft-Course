@@ -300,3 +300,40 @@ _Chainlink Data Feeds_ will help integrate currency conversion inside of our `Fu
 ### 🧑‍💻 Test yourself
 
 1. 📕 Describe 4 Chainlink products and what problem each one solves.
+
+***
+
+# Quiz: Fund Me Intro
+**1. What is the correct relationship between Wei, Gwei, and Ether in Ethereum's unit system?**
+* *a) 1 Ether = 1,000 Gwei = 1,000,000 Wei*
+* *b) 1 Ether = 1,000,000,000 Gwei = 1,000,000,000,000,000,000 Wei*
+* *c) 1 Gwei = 1,000 Wei = 1,000,000 Ether*
+* *d) 1 Ether = 1,000 Wei = 1,000,000 Gwei*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) 1 Ether = 1,000,000,000 Gwei = 1,000,000,000,000,000,000 Wei</p>
+</details>
+
+**2. What is the purpose of the revert action?**
+* *a) A revert action allows you to undo the most recent state change on the smart contract when called.*
+* *b) A revert action allows you to un-deploy a smart contract.*
+* *c) A revert action undoes all prior operations and returns the remaining gas to the transaction's sender.*
+* *d) A revert action stops execution but keeps all state changes up until that point.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) A revert action undoes all prior operations and returns the remaining gas to the transaction's sender.</p>
+</details>
+
+**3. Which keyword is used to allow a function to receive native blockchain tokens such as ETH?**
+* *a) payable*
+* *b) transfer*
+* *c) token*
+* *d) receive*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) payable.</p>
+</details>
+
