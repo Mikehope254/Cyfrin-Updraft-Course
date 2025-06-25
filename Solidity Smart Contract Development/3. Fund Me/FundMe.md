@@ -477,7 +477,6 @@ uint256 usdAmount = (ethAmount * uint256(price)) / (10 ** priceFeed.decimals());
 ```
 
 </details>
-
 3. 🧑‍💻 Implement another function on the `FundMe` contract that implements the `decimals()` methods of the Data Feed address.
 <details>
   <summary>Click to reveal answer</summary>
