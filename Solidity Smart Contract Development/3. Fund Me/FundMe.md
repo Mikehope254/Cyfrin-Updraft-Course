@@ -455,12 +455,13 @@ Advantages:
 - Interoperability: Enable different contracts to work together seamlessly
 - Upgradeability: Facilitate proxy patterns and upgradeable contracts
 - Code Reusability: Multiple contracts can implement the same interface
-- Reduced Deployment Costs: Interfaces are lightweight compared to full contracts</p>
-
+- Reduced Deployment Costs: Interfaces are lightweight compared to full contracts
+</p>
+</details>
 2. 📕 What are the steps required to convert a variable containing a value in ETH to its equivalent in USD?
 <details>
   <summary>Click to reveal answer</summary>
-  <p>
+ 
 ```solidity
 // 1. Get the latest price data
 (, int256 price, , , ) = priceFeed.latestRoundData();
@@ -474,12 +475,13 @@ uint256 ethAmount = ethAmountInWei / 1e18;
 // 4. Convert ETH to USD (adjust for decimals)
 uint256 usdAmount = (ethAmount * uint256(price)) / (10 ** priceFeed.decimals());
 ```
-</p>
+
+</details>
 
 3. 🧑‍💻 Implement another function on the `FundMe` contract that implements the `decimals()` methods of the Data Feed address.
 <details>
   <summary>Click to reveal answer</summary>
-  <p>
+  
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -501,10 +503,11 @@ contract FundMe {
     // Rest of FundMe contract...
 }
 ```
-
+<p>
 This implementation:
 - Imports the Chainlink AggregatorV3Interface
 - Stores the price feed address in the constructor
 - Creates a view function that calls the decimals() method on the price feed
 - Returns the decimals value (typically 8 for most Chainlink price feeds)
 </p>
+</details>
