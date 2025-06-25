@@ -297,9 +297,6 @@ Finally, _Chainlink Functions_ allow **API calls** to be made within a decentral
 
 _Chainlink Data Feeds_ will help integrate currency conversion inside of our `FundMe` contract. Chainlink's decentralized Oracle network not only addresses the 'Oracle problem', but provides a suite of additional features for enhancing every dApp capabilities.
 
-### 🧑‍💻 Test yourself
-
-1. 📕 Describe 4 Chainlink products and what problem each one solves.
 
 ***
 
@@ -393,3 +390,121 @@ In this example, _Chainlink Feeds_ are used to query the latest price of gold, e
 
 ## Conclusion
 Understanding and utilizing payable, require, and msg.value is crucial for handling transactions in Solidity. Besides that, Chainlink enhances smart contract functionality by providing access to real-world data, allowing for more dynamic and reliable decentralized applications.
+
+***
+
+# Solidity Interfaces
+
+In This part we'll learn how to convert Ethereum (ETH) into Dollars (USD) and how to use interfaces.
+
+## Converting Ethereum into USD
+
+We begin by trying to convert the `msg.value`, which is now specified in ETH, into USD. This process requires fetching the **current USD market price** of Ethereum and using it to convert the `msg.value` amount into USD.
+
+```solidity
+ // Function to get the price of Ethereum in USD
+ function getPrice() public {}
+ // Function to convert a value based on the price
+ function getConversionRate() public {}
+```
+
+## Chainlink Data Feed
+Our primary source for Ethereum prices is a **Chainlink Data Feed**. [Chainlink Data Feed documentation](https://docs.chain.link/data-feeds/using-data-feeds) provides an example of how to interact with a Data Feed contract:
+
+1. `AggregatorV3Interface`: a contract that takes a _Data Feed address_ as input. This contract maintains the ETH/USD price updated.
+2. `latestRoundData`: a function that returns an `answer`, representing the latest Ethereum price.
+
+To utilize the **Price Feed Contract**, we need its address and its ABI. The address is available in the Chainlink documentation under the [Price Feed Contract Addresses](https://docs.chain.link/data-feeds/price-feeds/addresses). For our purposes, we'll use ETH/USD price feed.
+
+## Interface
+To obtain the ABI, you can import, compile, and deploy the PriceFeed contract itself. In the previous section, we imported the `SimpleStorage` contract into the `StorageFactory` contract, deployed it, and only then we were able to use its functions.
+
+An alternative method involves the use of an **Interface**, which defines methods signature without their implementation logic. If compiled, the Price Feed Interface, it would return the ABI of the Price Feed contract itself, which was previously deployed on the blockchain. We don't need to know anything about the function implementations, only knowing the `AggregatorV3Interface` methods will suffice. The Price Feed interface, called `Aggregator V3 Interface`, can be found in [Chainlink's GitHub repository](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol).
+
+> 🗒️ **NOTE**\
+> Interfaces allow different contracts to interact seamlessly by ensuring they share a common set of functionalities.
+
+We can test the Interface usage by calling the `version()` function:
+
+```solidity
+function getVersion() public view returns (uint256) {
+    return AggregatorV3Interface(0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419).version();
+}
+```
+
+> 🗒️ **NOTE**\
+> It's best to work on testnets only after your deployment is complete, as it can be time and resource consuming.
+
+## Conclusion
+Using interfaces is a common and effective way to interact with external contracts. First, obtain the interface of the external contract, compile it to get the ABI, and then use the deployed contract's address. This allows you to call any function available at that address seamlessly.
+
+### 🧑‍💻 Test yourself
+
+1. 📕 Explain the role of interfaces in Solidity and why are they advantageous.
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>
+Role of Interfaces:
+Interfaces in Solidity are abstract contracts that define function signatures without implementation. They serve as templates that specify what functions must be implemented by any contract that inherits or interacts with them.
+
+Advantages:
+- Standardization: They create standard ways for contracts to interact (like ERC20, ERC721 standards)
+- Decoupling: Allow contracts to interact without needing to know each other's full implementation
+- Security: Reduce risk by limiting interaction to only defined functions
+- Interoperability: Enable different contracts to work together seamlessly
+- Upgradeability: Facilitate proxy patterns and upgradeable contracts
+- Code Reusability: Multiple contracts can implement the same interface
+- Reduced Deployment Costs: Interfaces are lightweight compared to full contracts</p>
+
+2. 📕 What are the steps required to convert a variable containing a value in ETH to its equivalent in USD?
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>
+```solidity
+// 1. Get the latest price data
+(, int256 price, , , ) = priceFeed.latestRoundData();
+
+// 2. Get the ETH amount (msg.value is in wei)
+uint256 ethAmountInWei = msg.value;
+
+// 3. Convert wei to ether (divide by 1e18)
+uint256 ethAmount = ethAmountInWei / 1e18;
+
+// 4. Convert ETH to USD (adjust for decimals)
+uint256 usdAmount = (ethAmount * uint256(price)) / (10 ** priceFeed.decimals());
+```
+</p>
+
+3. 🧑‍💻 Implement another function on the `FundMe` contract that implements the `decimals()` methods of the Data Feed address.
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
+contract FundMe {
+    AggregatorV3Interface internal priceFeed;
+    
+    constructor(address _priceFeed) {
+        priceFeed = AggregatorV3Interface(_priceFeed);
+    }
+    
+    // Function to get decimals from the price feed
+    function getPriceFeedDecimals() public view returns (uint8) {
+        return priceFeed.decimals();
+    }
+    
+    // Rest of FundMe contract...
+}
+```
+
+This implementation:
+- Imports the Chainlink AggregatorV3Interface
+- Stores the price feed address in the constructor
+- Creates a view function that calls the decimals() method on the price feed
+- Returns the decimals value (typically 8 for most Chainlink price feeds)
+</p>
