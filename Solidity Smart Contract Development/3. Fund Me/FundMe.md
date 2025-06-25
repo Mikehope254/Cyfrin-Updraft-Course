@@ -439,7 +439,6 @@ function getVersion() public view returns (uint256) {
 Using interfaces is a common and effective way to interact with external contracts. First, obtain the interface of the external contract, compile it to get the ABI, and then use the deployed contract's address. This allows you to call any function available at that address seamlessly.
 
 ### 🧑‍💻 Test yourself
-
 1. 📕 Explain the role of interfaces in Solidity and why are they advantageous.
 
 <details>
@@ -458,7 +457,9 @@ Advantages:
 - Reduced Deployment Costs: Interfaces are lightweight compared to full contracts
 </p>
 </details>
+
 2. 📕 What are the steps required to convert a variable containing a value in ETH to its equivalent in USD?
+
 <details>
   <summary>Click to reveal answer</summary>
  
@@ -477,7 +478,9 @@ uint256 usdAmount = (ethAmount * uint256(price)) / (10 ** priceFeed.decimals());
 ```
 
 </details>
+
 3. 🧑‍💻 Implement another function on the `FundMe` contract that implements the `decimals()` methods of the Data Feed address.
+
 <details>
   <summary>Click to reveal answer</summary>
   
@@ -504,9 +507,9 @@ contract FundMe {
 ```
 <p>
 This implementation:
-- Imports the Chainlink AggregatorV3Interface
-- Stores the price feed address in the constructor
-- Creates a view function that calls the decimals() method on the price feed
+- Imports the Chainlink AggregatorV3Interface,
+- Stores the price feed address in the constructor,
+- Creates a view function that calls the decimals() method on the price feed,
 - Returns the decimals value (typically 8 for most Chainlink price feeds)
 </p>
 </details>
