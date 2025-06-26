@@ -608,7 +608,69 @@ function getLatestPrice() public view returns (uint256) {
     return uint(answer) * 1e10;
 }
 ```
-## Conclusion
 
+## Conclusion
 This complete `getLatestPrice` function retrieves the latest price, adjusts the decimal places, and converts the value to an unsigned integer, making it compatible for its use inside other functions.
 
+
+## 🧑‍💻 Test yourself
+
+1. 📕 Why we need to multiply the latest ETH price by 1e10?
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>
+Chainlink price feeds return values with a specific number of decimals. For example:
+
+The ETH/USD price feed usually returns 8 decimals (i.e., 1 ETH = 3500_00000000)
+But uint256 values in Solidity often assume 18 decimals, especially when working with ETH in wei.
+So to scale the value up to 18 decimals, you multiply by 1e10:
+
+// Chainlink returns 8 decimals, we want 18
+uint256 adjustedPrice = priceFromChainlink * 1e10;
+
+This ensures unit consistency when doing math with other 18-decimal values like ETH balances or token prices.
+</P>
+</details>
+
+2. 📕 What's the result of the typecasting `uint256(-2)`?
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>
+In Solidity:
+-2 is a negative number (int256), but you are converting it to unsigned (uint256), which wraps around using two’s complement.
+So:
+uint256(-2) == 2^256 - 2
+
+This equals:
+115792089237316195423570985008687907853269984665640564039457584007913129639934
+
+➡️ It’s a very large number just 2 less than the maximum uint256.
+</p>
+</details>
+
+3. 🧑‍💻 Create a contract with a `getLatestBTCPriceInETH()` function that retrieves the latest BTC price in ETH.
+<details>
+  <summary>Click to reveal answer</summary>
+
+```solidity  
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.18;
+
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
+contract PriceFeedBTCtoETH {
+    AggregatorV3Interface internal btcEthPriceFeed;
+
+    constructor(address _btcEthPriceFeed) {
+        btcEthPriceFeed = AggregatorV3Interface(_btcEthPriceFeed);
+    }
+
+    function getLatestBTCPriceInETH() public view returns (uint256) {
+        (, int256 price, , , ) = btcEthPriceFeed.latestRoundData();
+        // Chainlink usually returns 18 decimals for BTC/ETH
+        return uint256(price);
+    }
+}
+```
+</details>
