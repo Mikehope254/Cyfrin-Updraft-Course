@@ -900,5 +900,29 @@ In this case, `123` is passed as the second `uint256` argument to the function.
 ## Conclusion
 In this lesson, we explored the benefits of using _libraries_ to reuse code and add new functionalities. We created a `PriceConverter` library to handle `getPrice`, `getConversionRate`, and `getVersion` functions, demonstrating how to structure and utilize libraries effectively.
 
+## 🧑‍💻 Test yourself
 
+1. 🧑‍💻 Create a simple library called `MathLibrary` that contains a function `sum` to add two `uint256` numbers. Then create a function `calculateSum` inside the `fundMe` contract that uses the `MathLibrary` function.
 
+<details>
+<summary>Click to reveal answer</summary>
+MathLibrary.sol
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.15;
+
+library MathLibrary {
+    function sum(uint256 a, uint256 b) internal pure returns (uint256){
+        return a + b;
+    }
+}
+```
+
+FundMe.sol
+```solidity
+    function calculateSum(uint256 a,uint256 b) public pure returns (uint256) {
+        uint256 result2 = a.sum(b);
+        return result2;
+    }
+```
+<details>
