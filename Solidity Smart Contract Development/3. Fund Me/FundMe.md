@@ -777,6 +777,7 @@ We have successfully implemented a system to track users who fund the `fundMe` c
 1. 🧑‍💻 Implement a function `contributionCount` to monitor how many times a user calls the `fund` function to send money to the contract.
 <details>
 <summary>Click to reveal answer</summary>
+
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
@@ -906,7 +907,9 @@ In this lesson, we explored the benefits of using _libraries_ to reuse code and 
 
 <details>
 <summary>Click to reveal answer</summary>
-MathLibrary.sol
+
+- MathLibrary.sol
+
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.15;
@@ -918,11 +921,12 @@ library MathLibrary {
 }
 ```
 
-FundMe.sol
+- FundMe.sol
+
 ```solidity
     function calculateSum(uint256 a,uint256 b) public pure returns (uint256) {
         uint256 result2 = a.sum(b);
         return result2;
     }
 ```
-<details>
+</details>
