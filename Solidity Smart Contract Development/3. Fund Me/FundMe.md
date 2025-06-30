@@ -1057,4 +1057,93 @@ To illustrate the code snippet, we start from `funderIndex` 0. When entering the
 
 In this lesson, we learned how to implement the withdraw function to manage accumulated funds and reset mappings using a for loop. This process ensures efficient handling of funders' records.
 
+***
 
+# Quiz: Fund Me Mid Section Recap
+**1. Which Solidity keyword specifies that a function can only be called by another contract or wallet, and not within the same contract?**
+* *a) Public*
+* *b) External*
+* *c) Private*
+* *d) Internal*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) External</p>
+</details>
+
+**2. What is type casting in Solidity?**
+* *a) Converting a value from one data type to another.*
+* *b) Modifying a variable's internal structure.*
+* *c) Checking the type of a variable.*
+* *d) Creating a new data type.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) Converting a value from one data type to another.</p>
+</details>
+
+**3. Why is it important to multiply before dividing in Solidity to maintain precision, and how does this affect calculations?**
+* *a) Multiplying before dividing is not necessary in Solidity since it automatically adjusts for floating-point precision. Thus, both (5 / 3) * 2 and (5 * 2) / 3 will produce the same result.*
+* *b) Dividing before multiplying provides higher precision in Solidity, as the language optimizes division operations to avoid truncation errors.*
+* *c) Multiplying before dividing ensures that precision is preserved, as Solidity performs integer division where truncation occurs if division is done first. For example, (5 * 2) / 3 yields 3, whereas (5 / 3) * 2 yields 2.*
+* *d) Solidity handles precision errors by converting all operations to floating-point arithmetic, making the order of operations irrelevant for maintaining precision.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p> c) Multiplying before dividing ensures that precision is preserved, as Solidity performs integer division where truncation occurs if division is done first. For example, (5 * 2) / 3 yields 3, whereas (5 / 3) * 2 yields 2.</p>
+</details>
+
+**4. What does the global variable 'msg.sender' represent?**
+* *a) The receiver of the current message or transaction.*
+* *b) The current block number.*
+* *c) The contract address where the transaction originated*
+* *d) The sender of the current message or transaction.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) The sender of the current message or transaction.</p>
+</details>
+
+**5. What is the primary purpose of creating a library in Solidity?**
+* *a) To store large amounts of data in an efficient manner.*
+* *b) To create a separate execution environment for complex logic.*
+* *c) To re-use common functionality across multiple contracts.*
+* *d) To interact with external systems or APIs.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) To re-use common functionality across multiple contracts</p>
+</details>
+
+**6. What is the significance of the 'unchecked' keyword in Solidity?**
+* *a) It allows developers to bypass built-in overflow checks, potentially improving gas efficiency but increasing the risk of errors*
+* *b) It specifies that a function should only be executed on a specific type of virtual machine.*
+* *c) It enables the use of advanced mathematical operations that are not supported by default.*
+* *d) It indicates that a function should be executed without any error handling.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) It allows developers to bypass built-in overflow checks, potentially improving gas efficiency but increasing the risk of errors</p>
+</details>
+
+**7. Which of the following Solidity code snippets would cause an overflow error if executed?**
+* *a) uint256 x = 100; x = x - 1;*
+* *b) uint8 x = 255; x = x + 1;*
+* *c) uint256 x = 100; x = x * 2;*
+* *d) uint16 x = 100; x = x / 2;*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) uint8 x = 255; x = x + 1;</p>
+</details>
+
+**8. When using a 'for' loop to iterate through an array, how do you access the current element being processed during each iteration?**
+* *a) Use the 'value' keyword to access the element.*
+* *b) Use the Iterator variable as an index to access the array element.*
+* *c) Use the 'current' keyword to access the element.*
+* *d) Access the element directly without an index.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) Use the Iterator variable as an index to access the array element.</p>
+</details>
