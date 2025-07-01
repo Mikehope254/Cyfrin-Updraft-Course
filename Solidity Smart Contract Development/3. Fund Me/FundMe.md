@@ -1148,6 +1148,8 @@ In this lesson, we learned how to implement the withdraw function to manage accu
   <p>b) Use the Iterator variable as an index to access the array element.</p>
 </details>
 
+***
+
 # Resetting an array
 
 The simplest way to reset the `funders` array is similar to the method used with the mapping: iterate through all its elements and reset each one to 0. Alternatively, we can create a brand new `funders` array.
@@ -1162,6 +1164,7 @@ funders = new address[]();
 ## Conclusion
 
 In this lesson, we learned how to reset the `funders` array by either iterating through its elements or creating a new zero-sized array. This step is crucial for completing the `withdraw` function and ensuring the contract's data is properly managed.
+
 
 # Sending Eth from a Contract
 
@@ -1221,10 +1224,10 @@ A more efficient solution is to use a **constructor** function:
 constructor() {}
 ```
 
-> 🗒️ **NOTE**:br
+> 🗒️ **NOTE**\
 > The constructor does not use the `function` and `public` keywords.
 
-### Assigning the Owner in the Constructor
+## Assigning the Owner in the Constructor
 
 The constructor function is automatically called during contract deployment, within the same transaction that deploys the contract.
 
@@ -1239,7 +1242,7 @@ constructor() {
 
 Here, we initialize the state variable `owner` with the contract deployer's address (`msg.sender`).
 
-### Modifying the Withdraw Function
+## Modifying the Withdraw Function
 
 The next step is to update the `withdraw` function to ensure it can only be called by the owner:
 
