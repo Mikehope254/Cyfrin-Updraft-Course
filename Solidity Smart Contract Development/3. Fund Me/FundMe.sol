@@ -6,9 +6,10 @@ import {PriceConverter} from "./PriceConverter.sol";
 contract FundMe {
     using PriceConverter for uint256;
 
-//670925 //650627 * 1541000000 = 1.002616207×10¹⁵
     uint256 public constant  MINIMUM_USD = 5e18;
-
+    //670,925 gas - non-constant 
+    //650,627 gas - constant
+    
     address[] public funders;
     mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
 
