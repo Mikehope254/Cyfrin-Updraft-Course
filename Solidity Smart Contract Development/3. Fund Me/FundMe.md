@@ -1474,6 +1474,74 @@ To test this functionality, send some Sepolia Ether to the `fundMe` contract usi
 This approach ensures that all transactions are processed as intended. Although directly calling the `fund` function costs less gas, this method ensures the user's contribution is properly acknowledged and credited.
 
 ## Conclusion
-By implementing `receive` and `fallback` functions, contracts can handle direct Ether transfers and non-existent function calls effectively, ensuring that transactions are processed as intended and users' contributions are properly tracked.
+By implementing `receive` and `fallback` functions, contracts can handle direct Ether transfers andreceive function non-existent function calls effectively, ensuring that transactions are processed as intended and users' contributions are properly tracked.
 
+*** 
 
+# Quiz: Fund Me Section Recap
+
+**1. How does the immutable keyword differ from the constant keyword in Solidity?**
+* *a) The immutable keyword can only be used for function parameters, while the constant keyword is used for state variables.*
+* *b) The immutable keyword allows values to be set at runtime, while the constant keyword requires values to be set at compile time.*
+* *c) The immutable keyword allows the variable to change after contract deployment, whereas the constant keyword makes the variable value unchangeable.*
+* *d) The immutable keyword can only be used with string variables, while the constant keyword can be used with any data type.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) The immutable keyword allows values to be set at runtime, while the constant keyword requires values to be set at compile time.</p>
+</details>
+
+**2. Which of the following is a valid way to add functionality to a function using a modifier?**
+* *a) function myFunction() onlyAdmin { ... }*
+* *b) function myFunction() modifier { ... }*
+* *c) function myFunction() public onlyAdmin { ... }*
+* *d) modifier myModifier() public { ... }*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) function myFunction() public onlyAdmin { ... }</p>
+</details>
+
+**3. What Solidity keyword allows variables to be set only once during the initial contract deployment?**
+* *a) Constant*
+* *b) Immutable*
+* *c) Private*
+* *d) Public*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) Immutable</p>
+</details>
+
+**4. When are constant and immutable variables initialized in Solidity?**
+* *a) Both constant and immutable variables are initialized at compile time.*
+* *b) Both constant and immutable variables are initialized at deployment time.*
+* *c) Constant variables are initialized at compile time, while immutable variables are initialized at deployment time.*
+* *d) Constant variables are initialized at deployment time, while immutable variables are initialized at compile time.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) Constant variables are initialized at compile time, while immutable variables are initialized at deployment time.</p>
+</details>
+
+**5. How does the fallback function differ from the receive function in Solidity?**
+* *a) The receive function is specifically designed to handle Ether transfers without data and is automatically invoked when Ether. The fallback function is used for handling calls with data or when the receive function is not defined. The fallback function can also handle Ether transfers with data.*
+* *b) The fallback function cannot handle Ether transfers, whereas the receive function handles both Ether transfers and function calls with data.*
+* *c) The receive function handles all types of Ether transfers and function calls, while the fallback function is only used for logging purposes and does not handle Ether transfers.*
+* *d) The receive function handles function calls with data, while the fallback function is used for plain Ether transfers. The receive function cannot handle Ether transfers with data*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) The receive function is specifically designed to handle Ether transfers without data and is automatically invoked when Ether. The fallback function is used for handling calls with data or when the receive function is not defined. The fallback function can also handle Ether transfers with data.</p>
+</details>
+
+**6. Why is it beneficial to use modifiers for access control?**
+* *a) Modifiers enhance gas efficiency by automatically preventing unauthorized transactions from being mined.*
+* *b) Modifiers allow reusable code to be applied to functions, reducing code duplication and improving readability.*
+* *c) Modifiers encrypt function logic, ensuring only certain users can read or write to the smart contract.*
+* *d) Modifiers ensure that only authorized contracts can access private variables, preventing unauthorized external interactions.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) Modifiers allow reusable code to be applied to functions, reducing code duplication and improving readability.</p>
+</details>
