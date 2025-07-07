@@ -1545,3 +1545,14 @@ By implementing `receive` and `fallback` functions, contracts can handle direct 
   <summary>Click to reveal answer</summary>
   <p>b) Modifiers allow reusable code to be applied to functions, reducing code duplication and improving readability.</p>
 </details>
+
+***
+
+# ZKsync plugin fix
+As we saw in the Simple Storage section, there is a small bug in the Remix ZKsync module. After a successful compilation, the deploy tab will still display the message `no smart contracts ready for deployment`.
+
+This issue arises due to a small bug in the plugin, which requires your smart contracts to be inside a `contracts` folder. To resolve this, you can create a new folder named 'contracts' and move your smart contract into it. You can then proceed to compile the contract again, and you should be able to deploy it without any issues.
+
+***
+
+
