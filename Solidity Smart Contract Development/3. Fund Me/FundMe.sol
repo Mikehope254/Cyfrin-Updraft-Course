@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
+import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 import {PriceConverter} from "./PriceConverter.sol";
 
 error NotOwner();
@@ -28,10 +29,14 @@ contract FundMe {
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] += msg.value;
     }
+    
+     function getVersion() public view returns (uint256) {
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        return priceFeed.version();
+    }
 
     function withdraw() public onlyOwner {
-        
-         /* starting index (initialization), ending index, step amount */
+        /* starting index (initialization), ending index, step amount */
         for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++ ){
         address funder = funders[funderIndex];
         addressToAmountFunded[funder] = 0;}
