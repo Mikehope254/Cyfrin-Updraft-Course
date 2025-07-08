@@ -123,3 +123,54 @@ When you're stuck on an issue you can't solve, you can visit forum platforms lik
 If you can't get help elsewhere, you can open an Github Issue in the [GitHub's Issue Tracker](https://github.com/Cyfrin/remix-fund-me-cu/issues?q=is%3Aissue). This section allows you to interact with the developer community, report bugs, and suggest enhancements. Remember to always search within existing issues before posting to avoid duplicates.
 
 GitHub is essential for sharing, writing, and interacting with fellow developers, as well as accessing and contributing to code. We will use it as a portfolio for our projects throughout the courses. This portfolio will become very valuable when applying for jobs, because it easily showcase your coding skills and contributions to open-source projects.
+
+# Setting up Github
+
+You know 
+
+# Formatting a question
+
+We'll be covering the importance of well crafted questions and how to properly format our inquires to give them the best chance of receiving a response.
+
+## The Art of Asking Questions
+
+A good example would be:
+
+"I am receiving this error when compiling.":
+
+```bash
+TypeError: Exactly one argument expected for explicit type conversion.
+--> PriceConvertor.sol:21:43:
+|
+21|    AggregatorV3Interface priceFeed = AggregatorV3Interface()
+|
+```
+
+Here's my code:
+
+```solidity
+AggregatorV3Interface priceFeed = AggregatorV3Interface()
+```
+
+Could someone please help me figure out what the issue is? 🙏
+
+Quite simply, we can take the following necessary steps while crafting our questions:
+
+1. Describe the issue clearly and concisely - Be clear in the problem you're facing and what steps got you there
+
+2. Highlight the specific error you're experiencing - including exact error messages can provide those helping you with valuable insight into where things went wrong
+
+3. Use markdown for code formatting - this is critical, formatting your code allows your question to be more readable and approachable for those trying to understand the problem
+
+4. Share the relevant part of the code causing the issue - only include what's relevant to your issue. Don't paste a whole contract into your question unless appropriate to do so. You can provide too much information.
+
+With a well formatted question, you're going to see a much higher rate of success in receiving help from others as well as AI.
+
+> The importance of markdown formatting cannot be stressed enough. If you're unfamiliar with markdown, don't hesitate to ask an AI like ChatGPT for advice, or to format things for you.
+
+## Wrapping Up
+Always remember, there are no bad questions but there are poorly formatted questions. Make your questions count and format them appropriately.
+
+A pillar of becoming a software engineer is being involved in these communities. Jump in and participate, ask questions and meet people. Contribution is the cornerstone of open source communities. Do your best to answer as many questions as you ask, this will reinforce your knowledge.
+
+> You don't have to be an expert to help those on the journey behind you.
