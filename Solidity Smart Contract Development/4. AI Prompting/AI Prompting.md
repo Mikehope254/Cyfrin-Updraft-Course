@@ -28,7 +28,7 @@ There are several AI models available these days, each with their pros and cons.
 
 - Copilot - formerly Bing Chat, and not to be confused with the IDE AI assistant, Copilot is rapidly becoming Microsoft's whole ecosystem response to the age of AI
 
-- Google Bard - ehhhhh - results may vary
+- Google Gemini (Formerly Bard) - results may vary
 
 There are 6 principles to prompt engineering to get the best out of your AI.
 
