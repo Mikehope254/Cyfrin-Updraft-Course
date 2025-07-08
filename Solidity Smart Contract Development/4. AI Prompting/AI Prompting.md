@@ -69,7 +69,7 @@ We always want to ask our questions in a web-indexed forum which will allow sear
 
 - Stack Overflow - online platform that facilitates knowledge exchange and problem-solving within the global programming and software development community
 
-- Peeranha - Peeranha is a decentralized knowledge sharing platform built on web3 technology, particularly blockchain
+- Peera - Peera is a decentralized knowledge sharing platform built on web3 technology, particularly blockchain
 
 - Reddit - Reddit is a widely popular and diverse social media platform that serves as a hub for online communities, discussions, and content sharing
 
@@ -98,12 +98,28 @@ The above are a number of effective steps to overcome issues you'll have while l
 
 4. Google the exact error - A problem you're having is likely to have been faced by someone else. Leverage search engines to find past solutions
 
-5. Make Accounts on Stack Exchange and Peeranha - These communities are invaluable to assist with Web3 software engineering and coding problems. Use them.
+5. Make Accounts on Stack Exchange and Peera - These communities are invaluable to assist with Web3 software engineering and coding problems. Use them.
 
 6. Post Issues on GitHub/Git - Interacting with the community is an integral part of the Web3 and software development communities. Open source projects allow the submission of `Issues` and `Pull Requests` on GitHub. Be respectful, but if you're unable to find answers, or believe you're hitting a bug in a protocol - creating issues is a great way to bring these problems to a project's attention.
 
-> Be sure to search for already open issues before submitting a new one to an open source project
+> Be sure to search for already open issues before submitting a new one to an open source project.
 
-If you don't have any experience with GitHub, don't worry. Our next lesson will be going over the set up of an account to get you started.
+***
 
-And, as ChatGPT would say "Keep hopping through the code, and until next time, stay ribbeting, my fellow blockchaineers!" 🤦‍♂️😬
+# Triage
+
+To get the most out of this course's tools and techniques, we've got some tips and tricks for you. In this lesson, we'll go over some recommended best practices:
+
+## Limit Self-Triage Time
+When encountering an error, limit your troubleshooting time to 15-20 minutes. For example, if you are trying to compile `PriceConverter.sol` and keep receiving an error indicating a missing argument, spend a limited amount of time attempting to solve it on your own. If you can't resolve it after 15-20 minutes, copy the error message and use your resources to ask for help.
+
+## Utilize AI Wisely
+While AI tools like ChatGPT can be very helpful, it's important not to rely on them entirely. It's crucial to learn the material yourself first and recognize when AI makes mistakes, also known as hallucinations. For instance, if you ask ChatGPT about [Foundry](https://getfoundry.sh/introduction/installation/#using-foundryup), it might provide inaccurate information because it may not be trained on it. Always verify AI responses with additional research.
+
+## Engage with Forums
+When you're stuck on an issue you can't solve, you can visit forum platforms like Stack Exchange or [Peera](https://app.peera.ai/) to ask questions, help others, and learn collaboratively. Ensure your questions are well-formatted using Markdown to improve clarity and the chances of getting helpful responses. If you need guidance on how to format questions, use AI to ask examples of well-formatted queries.
+
+## GitHub Issues
+If you can't get help elsewhere, you can open an Github Issue in the [GitHub's Issue Tracker](https://github.com/Cyfrin/remix-fund-me-cu/issues?q=is%3Aissue). This section allows you to interact with the developer community, report bugs, and suggest enhancements. Remember to always search within existing issues before posting to avoid duplicates.
+
+GitHub is essential for sharing, writing, and interacting with fellow developers, as well as accessing and contributing to code. We will use it as a portfolio for our projects throughout the courses. This portfolio will become very valuable when applying for jobs, because it easily showcase your coding skills and contributions to open-source projects.
