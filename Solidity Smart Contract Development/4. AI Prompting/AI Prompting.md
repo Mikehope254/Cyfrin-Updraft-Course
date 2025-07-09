@@ -218,5 +218,3 @@ Leverage the knowledge and resources provided by speedrun ethereum and Scaffold 
 
 ## Congratulations!
 You did it. That's all for this section - you should be incredibly proud. Take a break and rest up, cause you're ready to move on to [Foundry Fundamentals!](https://updraft.cyfrin.io/courses/foundry)
-
-s
