@@ -664,6 +664,285 @@ This project establishes the foundational pattern for frontend-smart contract in
 
 Remember that local development environments like Anvil are invaluable for rapid testing and iteration without incurring real-world costs or delays. Familiarize yourself with using the developer console for logging and debugging. While we build this from scratch, note that AI tools can assist in generating boilerplate code, but understanding the underlying principles remains paramount for building robust and secure web3 applications.
 
+# Node JS install
+
+- Welcome back! Before we dive deeper into the course material, we need to ensure your development environment is set up correctly. A crucial piece of this setup is installing NodeJS. This lesson will guide you through understanding what NodeJS is, why you need it, and how to install it using the recommended tools.
+
+- Remember the exercise of writing down your motivations for taking this course? Actively engaging with tasks like that often correlates with greater success, both in this course and in your broader journey within the industry. Keep that momentum going as we tackle this essential setup step.
+
+## Leveraging AI for JavaScript Learning
+
+- Throughout this course, we will be working extensively with JavaScript. If you're new to JavaScript or encounter concepts you don't fully grasp, remember that Artificial Intelligence (AI) tools are exceptionally proficient with this language.
+
+- Don't hesitate to use AI assistants like DeepSeek (chat.deepseek.com), Claude, or others to ask questions, understand code snippets, or even generate basic examples. For instance, asking an AI to "write a basic javascript codebase that will tell me the square root of a number" yields quick and useful results.
+
+- Beyond AI, utilize all available resources: Google, Reddit, the course discussion forums, and any other help channels provided. Strive to understand every single line of code presented. If something is unclear, ask questions until it makes sense. This foundational understanding is critical.
+
+## What is NodeJS?
+
+- We will heavily rely on a technology called NodeJS, which you can find at `nodejs.org`. NodeJS is formally defined as a "JavaScript runtime environment." While this terminology might seem a bit confusing initially, the core concept is straightforward.
+
+- The JavaScript code that runs directly within your web browser (like Chrome, Firefox, etc.) operates in the browser's built-in environment. It "just works" when embedded in a webpage. However, if you want to run JavaScript code directly on your computer – perhaps as a standalone script or to power a server – you need a different environment capable of executing that code outside the browser context.
+
+- This is where NodeJS comes in. It provides the necessary "runtime environment" to execute JavaScript files locally or on a server. Therefore, installing NodeJS is a mandatory prerequisite for proceeding with the course modules that involve running JavaScript code outside of a web browser.
+
+## Installing NodeJS via NVM and PNPM
+
+Installing development tools can sometimes be the most challenging part of getting started. If installing NodeJS or other tools like VS Code takes time – even a full day – don't get discouraged. Patience is key during this setup phase.
+
+We will perform the installation using the terminal, which is conveniently integrated into Visual Studio Code (VS Code).
+
+   1. Navigate to the Official Source: Open your web browser and go to the official NodeJS website's download page: `nodejs.org/en/download`.
+
+   2. Select Your Operating System: Choose the appropriate operating system (macOS, Windows, Linux).
+
+  - Important Windows Note: If you are using Windows, it is highly recommended that you use the Windows Subsystem for Linux (WSL). If you are using WSL, select the Linux installation instructions on the NodeJS website.
+
+  -  For macOS or native Linux environments, select the corresponding instructions.
+
+   3. Choose the Installation Method: The website will present different ways to install NodeJS. We strongly recommend using NVM (Node Version Manager). NVM is a tool that makes it easy to install and switch between different versions of NodeJS, which is incredibly helpful in development. Select the NVM option.
+
+   4. Select the Package Manager: NodeJS comes with a default package manager called npm. However, for this course, we recommend using PNPM. On the installation instructions page, ensure you change the package manager selection from the default (`npm) to `pnpm`.
+
+   5. Execute the Installation Script: Based on your selections (OS, NVM, PNPM), the website will generate a command-line script. Carefully copy this entire script.
+
+   6. Run in VS Code Terminal: Go back to VS Code, open the integrated terminal (usually via the Terminal menu -> New Terminal), paste the copied script into the terminal, and press Enter/Return to execute it. This script will typically download and run the NVM installer, then use NVM to install the recommended NodeJS version, and finally configure PNPM.
+
+Follow the specific instructions provided by the script. This might involve one or more commands to copy and paste.
+
+## Verifying Your Installation
+After the installation script finishes, there's a crucial step:
+
+   1. Restart Your Terminal: Close your current terminal session in VS Code (you can often click the trash can icon associated with the terminal panel) and then open a new one (Terminal -> New Terminal). This ensures that your system recognizes the newly installed software and any changes made to your system's environment paths.
+
+   2. Check Node Version: In the new terminal window, type the following command and press Enter:
+
+```bash
+node --version
+```
+
+    You should see a version number printed, such as v22.x.x (the exact version depends on the LTS version recommended by nodejs.org at the time of installation).
+
+   3. Check PNPM Version: Next, type the following command and press Enter:
+
+```bash
+    pnpm --version
+```
+
+    You should see another version number printed, for example, 10.x.x.
+
+If both commands successfully output version numbers, congratulations! You have successfully installed NodeJS and PNPM using NVM.
+Additional PNPM Resource
+
+If you encounter issues specifically with PNPM or want to learn more about its installation options, you can refer to its official documentation: `pnpm.io/installation`.
+
+With NodeJS installed, your development environment is one step closer to being ready.
+
+# Javascript Fundamentals Refresher
+
+Before diving into the complexities of web3 development, it's crucial to have a solid grasp of JavaScript fundamentals. This lesson provides a quick refresher on core concepts, assuming you have NodeJS and npm installed. We'll use Visual Studio Code (VS Code) as our editor and run JavaScript directly from the terminal. If you're already comfortable with basic JavaScript, feel free to skip this section.
+
+## Setting Up and Running Your First JavaScript File
+
+First, ensure you are working within your project directory (e.g., `full-stack-web3-cu`).
+
+   1. Create the File: In VS Code, right-click within the file explorer pane in your project folder and select "New File". Name this file `mycode.js`.
+
+   2. Run the File: Open your terminal within VS Code (or a separate terminal navigated to your project directory). To execute your JavaScript file using NodeJS, use the following command:
+   
+```bash
+    node mycode.js
+```
+
+   - Important: You must be in the same directory as `mycode.js` when running this command. You can use commands like `ls` (Linux/macOS) or `dir` (Windows) to list the files in the current directory and confirm `mycode.js` is present.
+
+## Displaying Output with console.log
+
+The `console.log()` function is essential for viewing output and debugging your code. It prints messages or the values of variables to your terminal.
+
+```javascript
+// Prints the string "hi" to the terminal
+console.log("hi");
+​
+// Prints the string "bye" to the terminal
+console.log("bye");
+```
+
+Run `node mycode.js` after adding this code (and saving the file!) to see the output.
+
+## The Importance of Saving Your Code
+
+VS Code indicates an unsaved file with a white dot next to the filename in its tab. Crucially, any changes you make to your code will not be reflected when you run the file unless you save it first.
+
+  - Use Cmd+S (Mac) or `Ctrl+S` (Windows/Linux), or go to File -> Save.
+
+  - If you run `node mycode.js` with unsaved changes, you'll see the output from the last saved version. Save the file, then run the command again to see the updated output.
+
+## Understanding Basic JavaScript Data Types
+
+JavaScript has several fundamental data types. Here are the key ones we'll cover now:
+
+1.  String: Represents textual data. Always enclose strings in single (') or double (") quotes.
+
+   - Examples: `"hello world"`, `'JavaScript'`, `"123"` (this is a string, not a number).
+
+2.  Number: Represents numerical data (integers or decimals). Do not use quotes.
+
+   - Examples: `25`, `16`, `3.14`, `0`.
+
+3.  Boolean: Represents a logical value, either true or false. Do not use quotes.
+
+   - Examples: `true`, `false`.
+
+You can check the data type of a value or variable using the typeof operator:
+
+```javascript
+// Examples of checking data types
+const message = "hello";
+console.log(typeof(message)); // Output: string
+​
+const isLoggedIn = false;
+console.log(typeof(isLoggedIn)); // Output: boolean
+​
+const userAge = 25;
+console.log(typeof(userAge)); // Output: number
+​
+const isFalseString = "false"; // Note the quotes
+console.log(typeof(isFalseString)); // Output: string
+​
+const isOneNumber = 1; // Note no quotes
+console.log(typeof(isOneNumber)); // Output: number
+```
+
+  - Note: JavaScript is case-sensitive. The operator is typeof, not typeOf. Typos like this will cause errors.
+  
+## Storing Data with Variables: let vs. const
+
+Variables are used to store data values under a specific name, allowing you to reuse and manipulate data easily. JavaScript provides two primary ways to declare variables: `let` and `const`.
+
+1. `let`: Declares a variable whose value _can_ be changed (reassigned) later in the code.
+
+```javascript
+    let myVariable = "initial value";
+    console.log(myVariable); // Output: initial value
+    ​
+    myVariable = "new value"; // Reassigning the variable
+    console.log(myVariable); // Output: new value
+```
+
+2. `const`: Declares a variable whose value cannot be reassigned after it's initially set. It represents a constant value. Attempting to reassign a `const` variable will result in an error.
+
+```javascript
+    // Working example
+    const fixedValue = "this cannot change";
+    console.log(fixedValue); // Output: this cannot change
+    ​
+    // Example causing an error
+    const myConstant = "hello";
+    console.log(myConstant); // Output: hello
+    // The next line will cause an error if uncommented and run:
+    // myConstant = "goodbye";
+```
+
+   If you attempt to reassign a `const` variable, NodeJS will throw an error similar to this:
+    `TypeError: Assignment to constant variable`.
+
+- Choose const by default unless you specifically know you'll need to reassign the variable, in which case use let. This helps prevent accidental changes to values that should remain constant.
+
+## Adding Notes with Comments
+
+Comments are lines in your code that the JavaScript interpreter ignores. They are used to add explanations, leave notes for yourself or others, or temporarily disable lines of code without deleting them.
+
+   - Syntax: Single-line comments start with //. Everything after // on that line is ignored.
+
+```javascript
+// This is a single-line comment explaining the code below.
+console.log("This line will run.");
+​
+// The following line is commented out, so it won't execute:
+// console.log("This line will NOT run.");
+​
+// Comments can contain anything:
+// asdfkljhasdflkjh23498hasdlkjf
+​
+// Use comments to clarify complex logic
+const taxRate = 0.08; // 8% sales tax rate
+​
+// Tip: In VS Code, select lines and use Cmd+/ (Mac) or Ctrl+/ (Win/Linux)
+// to quickly toggle comments on/off.
+```
+
+## Creating Reusable Code Blocks with Functions
+
+Functions allow you to group a block of code that performs a specific task. You define the function once and can then call (or invoke) it multiple times whenever you need to perform that task, making your code more organized and reusable.
+
+   - Definition Syntax:
+
+```javascript
+    function functionName(parameter1, parameter2) {
+      // Code to be executed goes here
+      // It can use parameter1 and parameter2
+    }
+```
+
+   - Calling Syntax:
+   
+```javascript
+    functionName(argument1, argument2);
+```
+
+Here's a simple example:
+
+```javascript
+// Define a function named greet
+function greet() {
+  console.log("Hello there!");
+}
+​
+// Call the function multiple times
+greet();
+greet();
+greet();
+​
+// Output:
+// Hello there!
+// Hello there!
+// Hello there!
+```
+
+  - Note on Hoisting: JavaScript has a feature called "hoisting" which sometimes allows you to call a function before its definition appears in the code. While this works for standard function declarations, it's generally considered good practice to define functions before you call them for better readability.
+
+## Leveraging AI for Code Generation and Debugging
+
+AI tools like DeepSeek (or others like ChatGPT, Copilot) can be helpful assistants during development.
+
+   1. Code Generation: You can ask the AI to generate boilerplate code or simple functions. For example, you might ask for a JavaScript function to calculate the square root of a number.
+
+   2. Debugging: When you encounter an error message in your terminal (like the `TypeError` from reassigning a `const`), copy the entire error message. Paste it into the AI chat tool and ask questions like:
+
+   - "What does this error mean?"
+
+   - "How can I fix this error in my code?"
+
+   - `"[Paste the error message here]` What is causing this?" (Using backticks helps the AI identify it as code/output).
+
+AI can often quickly explain common errors and suggest fixes, accelerating your learning and debugging process.
+
+## Key Workflow Tips
+
+  - Prerequisites: Ensure NodeJS and npm are installed.
+
+  - Run Location: Always execute `node yourfile.js` from the same directory where `yourfile.js` is located.
+
+  - SAVE YOUR FILES: Remember to save (`Cmd+S/Ctrl+S`) before running node. The white dot in the VS Code tab means unsaved changes.
+
+  - Terminal History: Use the `up` and `down` arrow keys in your terminal to cycle through previous commands, saving you typing.
+
+  - JavaScript Flexibility: Be aware that JavaScript can sometimes be flexible (e.g., optional semicolons, hoisting), which can occasionally lead to confusion. Sticking to consistent practices helps.
+
+This refresher covers the essential JavaScript concepts needed to get started. As we progress, we'll build upon these fundamentals.
+
+
 # Connecting Your Wallet to a Website
 
 Welcome to this lesson on connecting your web3 wallet to a website. We'll start with a simple frontend and explore how decentralized applications (dApps) establish communication with user wallets like MetaMask to interact with the blockchain.
@@ -753,184 +1032,4 @@ MetaMask (and other wallets) must have an RPC URL configured for each network it
 
 Therefore, the `window.ethereum` object acts as the bridge between the dApp's frontend and the user's wallet, while the wallet manages the underlying connection to the blockchain via an RPC URL. Understanding this mechanism is key to building web3 applications. In the next steps, we'll use this knowledge to implement the actual connection logic on our example website.
 
-# Deploy a smart contract locally using Anvil via scripts
 
-Deploying a smart contract via scripting is particularly handy because it provides a consistent and repeatable way to deploy reliably and its features enhance the testing of both the deployment processes and the code itself.
-
-There's a strong chance that you like the command-line approach, but scripting enriches the whole deployment process, bringing in more functionality and an ease of use second to none.
-
-Foundry eases the whole process since it is written in Solidity. This means our deployment scripts will also be written in Solidity. It is essential to distinguish Solidity as a contract language from Solidity as a scripting language. Foundry also incorporates elements that enhance our Solidity experience beyond the smart contracts realm. So, let's get started on creating a script to deploy our simple storage contract.
-
-In Foundry we keep our scripts in the script folder.
-
-Please create a new file called `DeploySimpleStorage.s.sol`.
-
-Using `.s.sol` as a suffix is a naming convention for Foundry scripts, in future lessons, when we'll write Foundry tests, these will bear the suffix of `.t.sol`.
-
-For more best practice info regarding Foundry scripts please click [here](https://getfoundry.sh/guides/best-practices/writing-contracts/#scripts).
-
-Open the newly created file. Here we'll write a solidity script for deploying our SimpleStorage contract.
-
-Type the following:
-
-```solidity
-// SPDX-License-Identifier: MIT
-​
-pragma solidity 0.8.19;
-​
-contract DeploySimpleStorage {
-    
-}
-```
-
-The first two lines are pretty self-explanatory.
-
-We declare the new contract, named `DeploySimpleStorage`
-
-For it to be considered a Foundry script and to be able to access the extended functionality Foundry is bringing to the table we need to import Script from `"forge-std/Script.sol"` and make `DeploySimpleStorage` inherit Script.
-
-NOTE: `forge-std` also called Forge Standard Library is a collection of pre-written Solidity contracts designed to simplify and enhance scripting and testing within the Foundry development framework.
-
-Furthermore, to be able to deploy `SimpleStorage` we also need to import it by typing `import {SimpleStorage} from "../src/SimpleStorage.sol";`
-
-```solidity
-// SPDX-License-Identifier: MIT
-​
-pragma solidity 0.8.19;
-​
-import {Script} from "forge-std/Script.sol";
-import {SimpleStorage} from "../src/SimpleStorage.sol";
-​
-contract DeploySimpleStorage is Script {
-    
-}
-```
-
-Every script needs a main function, which, according to the best practice linked above is called `run`. Whenever you run `forge script` this is the function that gets called.
-
-```solidity
-// SPDX-License-Identifier: MIT
-​
-pragma solidity 0.8.19;
-​
-import {Script} from "forge-std/Script.sol";
-import {SimpleStorage} from "../src/SimpleStorage.sol";
-​
-contract DeploySimpleStorage is Script {
-    function run() external returns (SimpleStorage) {
-        vm.startBroadcast();
-​
-        SimpleStorage simpleStorage = new SimpleStorage();
-​
-        vm.stopBroadcast();
-        return simpleStorage;
-    }
-}
-```
-
-`run` is an external function that will return the `SimpleStorage` contract.
-
-In the Run function, we are going to use a distinctive keyword: `vm`. Foundry has a distinctive feature known as cheat codes. The `vm` keyword is a cheat code in Foundry, and thereby only works in Foundry.
-
-`vm.startBroadcast` indicates the starting point for the list of transactions that get to be sent to the RPC URL;
-
-Similarly, `vm.stopBroadcast` indicates the ending point of the list of transactions that get to be sent to the `RPC URL;`
-
-Between those two we write:
-
-`SimpleStorage simpleStorage = new SimpleStorage();`
-
-The `new` keyword is used to create a new smart contract in Solidity.
-
-We end the function with `return simpleStorage;`.
-
-Please select the `Anvil` terminal and press `CTRL(CMD) + C` to stop it. Now run the following command:
-
-```bash
-forge script script/DeploySimpleStorage.s.sol
-```
-
-This should go through without any errors, but if you hit some errors related to `incompatible solidity versions in various files` please ensure that both the `SimpleStorage.sol` and `DeploySimpleStorage.s.sol` use `pragma solidity 0.8.19;`
-
-If you want to further extend your knowledge about scripting please go [here](https://getfoundry.sh/guides/scripting-with-solidity/)
-
-You should get the following output:
-
-```solidity
-[⠆] Compiling...
-[⠔] Compiling 2 files with 0.8.19
-[⠒] Solc 0.8.19 finished in 1.08s
-Compiler run successful!
-Script ran successfully.
-Gas used: 338569
-​
-== Return ==
-0: contract SimpleStorage 0x90193C961A926261B756D1E5bb255e67ff9498A1
-​
-If you wish to simulate on-chain transactions pass a RPC URL.
-```
-
-**The million-dollar question**: If we didn't pass an RPC URL, where did this deploy to?
-
-If the RPC URL is not specified, Foundry automatically launches an Anvil instance, runs your script (in our case deployed the contract) and then terminates the Anvil instance.
-
-Run the `anvil` command in the terminal, open up a new terminal and type the following:
-
-```bash
-forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545
-```
-
-To get the following output:
-
-```text
-No files changed, compilation skipped
-EIP-3855 is not supported in one or more of the RPCs used.
-Unsupported Chain IDs: 31337.
-Contracts deployed with a Solidity version equal or higher than 0.8.20 might not work properly.
-For more information, please see https://eips.ethereum.org/EIPS/eip-3855
-Script ran successfully.
-​
-== Return ==
-0: contract SimpleStorage 0x34A1D3fff3958843C43aD80F30b94c510645C316
-​
-## Setting up 1 EVM.
-​
-==========================
-​
-Chain 31337
-​
-Estimated gas price: 2 gwei
-​
-Estimated total gas used for script: 464097
-​
-Estimated amount required: 0.000928194 ETH
-​
-==========================
-​
-SIMULATION COMPLETE. To broadcast these transactions, add --broadcast and wallet configuration(s) to the previous
-command. See forge script --help for more.
-```
-
-**Another million-dollar question**: Is it deployed now?
-
-Answer: No, the output indicates this was a simulation. But, we got a new folder out of this, the `broadcast` folder contains information about different script runs in case we forget details.
-
-Hit the up arrow key and add `--interactive --broadcast --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80` at the end.
-
-Our contract is now successfully deployed! Fantastic!
-
-Switch to the `anvil` terminal where you'll see:
-
-```text
-    Transaction: 0x73eb9fb4ef7b159e03c50d669c42e2ec4eeaa9358bea0a710cb07168e5192570
-    Contract created: 0x5fbdb2315678afecb367f032d93f642f64180aa3
-    Gas used: 357088
-​
-    Block Number: 1
-    Block Hash: 0x8ea564f146e04bb36fc27f0b491223a023b5882d2fcfce3ff85e0dd152e611e4
-    Block Time: "Tue, 16 Apr 2024 13:39:51 +0000"
-```
-
-Awesome!
-
-Through this lesson we kept talking about a thing called `transaction`, but what is a `transaction`? Tune in the next lesson to find out.
