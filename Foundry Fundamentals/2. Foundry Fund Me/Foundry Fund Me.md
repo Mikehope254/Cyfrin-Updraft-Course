@@ -415,3 +415,102 @@ Awesome! You just completed your first Forge test, get used to writing those bec
   <summary>Click to reveal answer</summary>
   <p>c) cast</p>
 </details>
+
+**4. In programming languages like Solidity, what operation is typically performed by the postfix increment operator (`++`) on a numerical variable?**
+* *a) It increases the value of the variable by 1.*
+* *b) It doubles the value of the variable*
+* *c) It decreases the value of the variable by 1.*
+* *d) It sets the value of the variable to 0.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) It increases the value of the variable by 1.</p>
+</details>
+
+**5. Which command is typically used to initialize a new project using the Foundry development toolkit?**
+* *a) foundry start*
+* *b) foundry build*
+* *c) forge new project*
+* *d) forge init*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>d) forge init</p>
+</details>
+
+**6. In Solidity development, what is a common naming convention prefix for immutable variables?**
+* *a) i_*
+* *b) p_*
+* *c) c_*
+* *d) s_*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) i_</p>
+</details>
+
+**7. In software development, particularly for systems where errors can be costly, what is the primary goal of executing automated tests before deployment?**
+* *a) To generate user documentation based on code comments.*
+* *b) To verify that the system's logic behaves as expected and identify potential errors.*
+* *c) To reduce the time spent writing the initial code.*
+* *d) To automatically optimize the code for performance.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) To verify that the system's logic behaves as expected and identify potential errors.</p>
+</details>
+
+**8. What command is typically used to execute the test suite in a Foundry project?**
+* *a) forge test*
+* *b) solidity test*
+* *c) forge compile*
+* *d) foundry run tests*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) forge test</p>
+</details>
+
+**9. After initializing a new Foundry project or installing dependencies, where are external libraries typically stored?**
+* *a) In the `src` directory.*
+* *b) In the `test` directory.*
+* *c) In the `lib` directory.*
+* *d) In the `script` directory.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) In the `lib` directory.</p>
+</details>
+
+**10. If source code fails to compile in a local development setup due to an error stating an imported file (e.g., '@some-library/contracts/SomeInterface.sol') was 'not found', what is the most probable cause?**
+* *a) The development framework fundamentally lacks the capability to handle import statements*
+* *b) The version of the compiler being used does not support the features used in the imported file.*
+* *c) There is a critical syntax error within the source code file that is attempting the import.*
+* *d) The required external library that contains the specified file has not been downloaded and installed into the project's dependencies.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>d) The required external library that contains the specified file has not been downloaded and installed into the project's dependencies.</p>
+</details>
+
+**11. When writing tests in certain Solidity testing environments, how are functions usually designated to be recognized and executed as individual test cases?**
+* *a) By marking the function with a specific `//@test` comment.*
+* *b) By declaring the function with `external` visibility only.*
+* *c) By ensuring the function returns a boolean value indicating success or failure.*
+* *d) By prefixing the function name with `test`.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>d) By prefixing the function name with `test`.</p>
+</details>
+
+**12. What file naming convention is often used by testing frameworks like Foundry to automatically discover Solidity files containing tests?**
+* *a) Starting the filename with the prefix `Test_`.*
+* *b) Ensuring the file contains at least one contract inheriting from a base `Testable` contract.*
+* *c) Placing all test files within a directory named `__tests__`.*
+* *d) Appending a specific suffix, such as `.t.sol`, to the filename.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>d) Appending a specific suffix, such as `.t.sol`, to the filename.</p>
+</details>
