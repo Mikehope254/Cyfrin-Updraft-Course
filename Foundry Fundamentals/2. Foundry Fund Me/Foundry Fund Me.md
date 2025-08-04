@@ -372,7 +372,8 @@ Compiler run successful!
 Ran 1 test for test/FundMe.t.sol:FundMeTest
 [PASS] testMinimumDollarIsFive() (gas: 5453)
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 487.20µs (43.20µs CPU time)
-​```
+​
+```
 
 Great job! Let's delete the `favNumber` and `greatCourse` to keep our test file nice and clean.
 
@@ -380,4 +381,37 @@ Try to change the right side of the `assertEq` line to check what a failed test 
 
 Awesome! You just completed your first Forge test, get used to writing those because whether you are going to be a developer or an auditor you will write _A LOT_ of them.
 
+# Quiz 6
 
+**1. What is a common naming convention used in Solidity for constant variables, enhancing code readability and adherence to style guides?**
+* *a) ALL_CAPS_SNAKE_CASE (e.g., `MAXIMUM_VALUE`)*
+* *b) PascalCase (e.g., `MaximumValue`)*
+* *c) kebab-case (e.g., `maximum-value`)*
+* *d) camelCase (e.g., `maximumValue`)*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) ALL_CAPS_SNAKE_CASE (e.g., `MAXIMUM_VALUE`)</p>
+</details>
+
+**2. When testing smart contracts, what is the typical purpose of using functions or directives like `vm.expectRevert()` or similar constructs?**
+* *a) To assert that a specific function call fails under defined conditions, ensuring proper error handling.*
+* *b) To automatically deploy mock contracts required for the test setup.*
+* *c) To simulate network latency during function execution.*
+* *d) To measure the exact gas cost of a successful transaction.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) To assert that a specific function call fails under defined conditions, ensuring proper error handling.</p>
+</details>
+
+**3. Which Foundry command-line tool is specifically mentioned for interacting with contracts, including inspecting storage?**
+* *a) anvil*
+* *b) forge*
+* *c) cast*
+* *d) deploy*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) cast</p>
+</details>
