@@ -25,12 +25,12 @@ contract FundMe {
     }
 
     function fund() public payable{
-        require(msg.value.getConversionRate()>= MINIMUM_USD, "didn't send enough ");
+        require(msg.value.getConversionRate()>= MINIMUM_USD, "didn't send enough");
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] += msg.value;
     }
     
-     function getVersion() public view returns (uint256) {
+    function getVersion() public view returns (uint256) {
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
         return priceFeed.version();
     }
