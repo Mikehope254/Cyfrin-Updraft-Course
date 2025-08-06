@@ -10,29 +10,26 @@ contract FundMe {
     using PriceConverter for uint256;
    
     uint256 public constant  MINIMUM_USD = 5e18;
-    //670,925 gas - non-constant 
-    //650,627 gas - constant
 
     address[] public funders;
     mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
 
     address public immutable i_owner;
-    //439 immutable 
-    //2574 non-immutable
-    
-    constructor() {
+    AggregatorV3Interface private s_priceFeed;
+
+    constructor(address priceFeed) {
         i_owner = msg.sender;
+        s_priceFeed = AggregatorV3Interface(priceFeed);
     }
 
     function fund() public payable{
-        require(msg.value.getConversionRate()>= MINIMUM_USD, "didn't send enough");
+        require(msg.value.getConversionRate(s_priceFeed)>= MINIMUM_USD, "didn't send enough");
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] += msg.value;
     }
     
     function getVersion() public view returns (uint256) {
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        return priceFeed.version();
+        return s_priceFeed.version();
     }
 
     function withdraw() public onlyOwner {
@@ -44,21 +41,11 @@ contract FundMe {
         //resetting the array
         funders = new address[](0);
 
-        //transfer
-        //payable(msg.sender) = payable address
-        //payable(msg.sender).transfer(address(this).balance);
-
-        //send
-        //bool sendSuccess = payable(msg.sender).send(address(this).balance);
-        //require(sendSuccess, "Send failed");
-
-        //call
         (bool callSuccess, ) = payable(msg.sender).call{value:address(this).balance}("") ;   
         require(callSuccess, "Call Failed");
     }
     
     modifier onlyOwner(){
-    	//require(msg.sender == i_owner, "Sender is not owner");
         if(msg.sender != i_owner) {
             revert FundMe__NotOwner();
         }
