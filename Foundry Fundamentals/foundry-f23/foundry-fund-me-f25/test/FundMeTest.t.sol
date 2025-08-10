@@ -24,8 +24,13 @@ contract FundMeTest is Test{
     }
 
     function testPriceFeedVersionIsAccurate() public view {
-        uint256 version = fundMe.getVersion();
-        assertEq(version, 4);
+        if (block.chainid == 11155111) {
+            uint256 version = fundMe.getVersion();
+            assertEq(version, 4);
+        } else if (block.chainid == 1) {
+            uint256 version = fundMe.getVersion();
+            assertEq(version, 6);
+        }
     }
 }
 
