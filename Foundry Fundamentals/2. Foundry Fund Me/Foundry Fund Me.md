@@ -1004,3 +1004,115 @@ function getAnvilEthConfig() public returns (NetworkConfig memory) {
 ```
 
 More testing and refactorings in the next lessons!
+
+# Quiz 13
+
+**1. Within any function of a smart contract instance, what does the expression `address(this)` evaluate to?**
+* *a) The unique address of that specific contract instance.*
+* *b) The address of the contract's designated owner.*
+* *c) A generic placeholder for contract addresses.*
+* *d) The address of the account or contract that called the current function.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) The unique address of that specific contract instance.</p>
+</details>
+
+**2. Which Foundry cheatcode commands are used to wrap the transaction(s) intended to be broadcast to the network during a script execution?**
+* *a) vm.startBroadcast() and vm.stopBroadcast()*
+* *b) vm.record() and vm.stopRecord()*
+* *c) vm.startPrank() and vm.stopPrank()*
+* *d) vm.beginDeploy() and vm.endDeploy()*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) vm.startBroadcast() and vm.stopBroadcast()</p>
+</details>
+
+**3. Within the main execution function of a Foundry deploy script (like `run()`), how is a new instance of a contract typically deployed?**
+* *a) Calling `vm.deployContract("FundMe");`.*
+* *b) Executing `forge create FundMe`.*
+* *c) Using the `new` keyword followed by the contract's name (e.g., `new FundMe();`).*
+* *d) Importing and calling a special `deploy()` function from the contract.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) Using the `new` keyword followed by the contract's name (e.g., `new FundMe();`).</p>
+</details>
+
+**4. What is a widely recommended security practice for managing configuration details like RPC URLs, especially if they contain sensitive API keys?**
+* *a) Encrypt the specific test files that utilize these sensitive URLs.*
+* *b) Store them in environment variables, often loaded from a configuration file (e.g., `.env`) that is excluded from version control (e.g., via `.gitignore`).*
+* *c) Commit them to a private version control repository accessible only to the development team.*
+* *d) Embed them directly as string literals within the test code for easy access.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) Store them in environment variables, often loaded from a configuration file (e.g., `.env`) that is excluded from version control (e.g., via `.gitignore`).</p>
+</details>
+
+**5. What type of testing involves creating a copy of a blockchain's state at a specific point in time to run simulations?**
+* *a) Integration tests*
+* *b) Staging tests*
+* *c) Unit tests*
+* *d) Forking tests*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>d) Forking tests</p>
+</details>
+
+**6. What metric does the `forge coverage` command primarily help developers measure?**
+* *a) The total gas consumed by the test suite execution.*
+* *b) The number of security vulnerabilities detected by static analysis.*
+* *c) The percentage of the contract's code paths exercised by the existing tests.*
+* *d) The time taken for the deployment scripts to complete.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) The percentage of the contract's code paths exercised by the existing tests.</p>
+</details>
+
+**7. When a smart contract's constructor assigns `msg.sender` to a state variable (e.g., `owner`), and this contract is deployed via a script called from a test that uses a broadcast mechanism (like Foundry's `vm.startBroadcast`), what address is typically assigned?**
+* *a) A newly generated random address for each deployment.*
+* *b) The address of the test contract executing the setup function.*
+* *c) The default deployer/sender account configured in the testing or scripting environment.*
+* *d) The address of the Chainlink oracle.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) The default deployer/sender account configured in the testing or scripting environment.</p>
+</details>
+
+**8. When developing a contract that relies on a Chainlink Price Feed, what configuration detail is essential to manage for multi-network deployment?**
+* *a) The specific address of the Price Feed contract deployed on each target network.*
+* *b) The API key for accessing Chainlink's off-chain services.*
+* *c) The historical price data for the feed.*
+* *d) The ABI (Application Binary Interface) of the Price Feed contract.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>a) The specific address of the Price Feed contract deployed on each target network.</p>
+</details>
+
+**9. In smart contract development, how can deployment scripts dynamically select network-specific parameters like contract addresses?**
+* *a) By requiring users to manually input addresses during each transaction.*
+* *b) By checking the `block.chainid` and using conditional logic or a configuration contract.*
+* *c) By hardcoding addresses for every possible network within the main contract.*
+* *d) By querying a centralized oracle for the correct addresses.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>b) By checking the `block.chainid` and using conditional logic or a configuration contract.</p>
+</details>
+
+**10. What architectural pattern helps manage varying external contract addresses (e.g., oracles, tokens) across different blockchain networks (like mainnet, testnets, and local)?**
+* *a) Hardcoding all possible addresses directly into the main application contract.*
+* *b) Storing addresses exclusively in off-chain configuration files read only during deployment.*
+* *c) Employing a dedicated configuration contract that selects and returns the appropriate address based on the current network identifier.*
+* *d) Requiring users to manually input the correct address every time they interact with the contract.*
+
+<details>
+  <summary>Click to reveal answer</summary>
+  <p>c) Employing a dedicated configuration contract that selects and returns the appropriate address based on the current network identifier.</p>
+</details>
