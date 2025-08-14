@@ -7,15 +7,23 @@ import {PriceConverter} from "./PriceConverter.sol";
 error FundMe__NotOwner();
 
 contract FundMe {
+    // Type Declarations
     using PriceConverter for uint256;
    
+    // State variables
     uint256 public constant  MINIMUM_USD = 5e18;
-
     address[] private s_funders;
     mapping(address funder => uint256 amountFunded) private s_addressToAmountFunded;
-
     address public immutable i_owner;
     AggregatorV3Interface private s_priceFeed;
+
+    //Modifiers
+    modifier onlyOwner(){
+        if(msg.sender != i_owner) {
+            revert FundMe__NotOwner();
+        }
+    	_;
+    }
 
     constructor(address priceFeed) {
         i_owner = msg.sender;
@@ -24,8 +32,8 @@ contract FundMe {
 
     function fund() public payable{
         require(msg.value.getConversionRate(s_priceFeed)>= MINIMUM_USD, "didn't send enough");
-        s_funders.push(msg.sender);
         s_addressToAmountFunded[msg.sender] += msg.value;
+        s_funders.push(msg.sender);
     }
     
     function getVersion() public view returns (uint256) {
@@ -45,11 +53,17 @@ contract FundMe {
         require(callSuccess, "Call Failed");
     }
     
-    modifier onlyOwner(){
-        if(msg.sender != i_owner) {
-            revert FundMe__NotOwner();
+    function cheaperWithdraw() public onlyOwner {
+        address[] memory funders = s_funders;
+        // mappings can't be in memory, sorry!
+        for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+            address funder = funders[funderIndex];
+            s_addressToAmountFunded[funder] = 0;
         }
-    	_;
+        s_funders = new address[](0);
+        // payable(msg.sender).transfer(address(this).balance);
+        (bool success,) = i_owner.call{value: address(this).balance}("");
+        require(success);
     }
        
     receive() external payable {
@@ -69,4 +83,8 @@ contract FundMe {
     function getFunder( uint256 index ) external view returns (address){
         return s_funders[index];
     }
+    
+    // function getFunderCount() public view returns (uint256) {
+    //     return s_funders.length;
+    // }
 }
