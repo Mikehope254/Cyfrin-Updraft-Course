@@ -10,7 +10,7 @@ contract FundMeTest is Test {
     FundMe fundMe;
 
     address USER = makeAddr("user");
-    uint256 constant SEND_VALUE = 0.1 ether; // 100000000000000000
+    uint256 constant SEND_VALUE = 0.03 ether; // 100000000000000000
     uint256 constant STARTING_BALANCE = 10 ether;
 
     function setUp() external {
@@ -58,6 +58,8 @@ contract FundMeTest is Test {
         vm.prank(USER);
         fundMe.fund{value: SEND_VALUE};
         
+        assertEq(fundMe.getFunderCount(), 1);
+        
         address funder = fundMe.getFunder(0);
         assertEq(funder, USER);
     }
@@ -69,8 +71,12 @@ contract FundMeTest is Test {
     }
 
     function testOnlyOwnerCanWithdraw() public funded{
+        vm.deal(USER, STARTING_BALANCE);
         vm.prank(USER);
+        fundMe.fund{value: SEND_VALUE};
+
         vm.expectRevert();
+        vm.prank(USER);
         fundMe.withdraw();
     }
 

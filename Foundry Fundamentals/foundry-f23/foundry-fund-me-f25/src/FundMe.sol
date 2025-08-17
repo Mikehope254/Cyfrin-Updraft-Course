@@ -88,4 +88,8 @@ contract FundMe {
     function getOwner() external view returns (address){
         return i_owner;
     }
+
+    function getFunderCount() external view returns (uint256) {
+        return s_funders.length;
+}
 }
