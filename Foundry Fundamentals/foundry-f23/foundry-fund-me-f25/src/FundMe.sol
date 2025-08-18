@@ -91,5 +91,9 @@ contract FundMe {
 
     function getFunderCount() external view returns (uint256) {
         return s_funders.length;
-}
+    }
+
+    function getPriceFeed() public view returns (AggregatorV3Interface) {
+        return s_priceFeed;
+    }
 }
