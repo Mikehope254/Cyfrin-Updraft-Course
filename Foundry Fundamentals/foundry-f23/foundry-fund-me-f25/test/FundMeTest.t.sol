@@ -9,6 +9,8 @@ import {DeployFundMe} from "../script/DeployFundMe.s.sol";
 contract FundMeTest is Test {
     FundMe fundMe;
 
+    error FundMe__NotOwner();
+    
     address USER = makeAddr("user");
     uint256 constant SEND_VALUE = 0.1 ether; // 100000000000000000
     uint256 constant STARTING_BALANCE = 10 ether;
@@ -70,14 +72,14 @@ contract FundMeTest is Test {
         _;
     }
 
-    function testOnlyOwnerCanWithdraw() public funded{
-        vm.expectRevert(FundMe__NotOwner.selector);
+    function testOnlyOwnerCanWithdraw() public {
         vm.prank(USER);
+        vm.expectRevert(FundMe__NotOwner.selector);
         fundMe.withdraw();
     }
 
     function testWithdrawWithASingleFunder() public funded{
-        //Arrange
+        //Arrange`
         uint256 startingOwnerBalance = fundMe.getOwner().balance;
         uint256 startingFundMeBalance = address(fundMe).balance;
 
